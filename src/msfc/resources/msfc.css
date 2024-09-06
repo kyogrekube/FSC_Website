@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the navigation menu */
+  .topnav {
+    border-top: 10px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: left;
+  }
+  
+  /* Navigation links */
+  .topnav a {
+    float: left;
+    padding: 12px 0px 12px 0px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+    width: 20%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+    text-align: center; /* If you want the text to be centered */
+  }
+  
+  /* Add a background color on mouse-over */
+  .topnav a:hover {
+    background-color: #6e6e6e;
+    color: white;
+  }
+  
+  /* Style the current/active link */
+  .topnav a.active {
+    background-color: #000000;
+    color: white;
+    overflow: auto;
+    display: block;
+  }
+  
+  .parent-container {
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+  }
+  
+  .img-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text-container {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    display: block;
+    line-height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .text-container li {
+    display: break;
+    list-style-type: disc;
+  }
+  
+  .sublist li {
+    display: break;
+    list-style-type: disc;
+    padding-left: 45px;
+  }
+  
+  .red-bottom-section {
+    background-color: red;
+    height: 50px; /* Adjust the height as needed */
+    text-align: center;
+    justify-content: center;
+    border-bottom: 5px solid black;
+  }
+  
+  h1 {
+    text-align: center;
+  }
