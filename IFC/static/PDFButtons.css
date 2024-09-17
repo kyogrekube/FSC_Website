@@ -1,0 +1,41 @@
+
+.pdf-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pdf-button {
+    background-color: #FFFFFF;
+    border: 2px solid #EDEDED;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-button:hover {
+    background-color: #EDEDED;
+    text-decoration: none;
+    color: #333333;
+}
+
+.pdf-button:hover .stripe {
+    background-color: rgb(214, 0, 28);
+}
+
+.pdf-button .stripe {
+    width: 5px;
+    height: 100%;
+    background-color: lightgray;
+    transition: background-color 0.3s ease;
+    order: 1;
+}
+
+.pdf-button .text {
+    margin-right: 10px;
+}

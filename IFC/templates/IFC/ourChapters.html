@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Chapters</title>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'IFC/images/favicon.png' %}" />
+    <style>
+        /* Add your custom styles here */
+        .page-title{
+            background-color: rgb(214, 0, 28);
+            color: black;
+            text-align: center;
+            position: flex;
+        }
+        
+        .chapters{margin-top: 25px;}
+    </style>
+</head>
+
+<body>
+    {% include 'IFC/navbar.html' %}
+
+    <div class="chapters">
+        {% include 'IFC/chapterGrid.html' %}
+    </div> 
+
+    <!-- Footer -->
+    {% include 'IFC/footer.html' %}
+
+</body>
+
+</html>
