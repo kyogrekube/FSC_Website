@@ -144,3 +144,11 @@ def ThetaXi(request):
 
 def ZetaPsi(request):
     return render(request, 'IFC/chapterPages/ZetaPsi.html')
+
+
+def staff(request):
+    return render(request, 'IFC/staff.html')
+
+
+def commitments(request):
+    return render(request, 'IFC/commitments.html')
