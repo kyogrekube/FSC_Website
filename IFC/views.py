@@ -50,10 +50,6 @@ def eventSchedule(request):
     return render(request, 'IFC/eventSchedule.html')
 
 
-def ourChapters(request):
-    return render(request, 'IFC/ourChapters.html')
-
-
 def Acacia(request):
     return render(request, 'IFC/chapterPages/Acacia.html')
 
