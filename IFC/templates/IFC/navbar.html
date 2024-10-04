@@ -85,8 +85,10 @@
             background-color: rgb(214, 0, 28) !important;
             color: white !important;
         }
-        .dropdown-item:hover{
-            background-color: rgb(200, 200, 200);
+        .nav-item.dropdown:hover .dropdown-menu{
+            display: block;
+        }
+        .nav-item.dropdown:hover .dropdown-toggle {
             color: black;
         }
         .nav-item{
@@ -96,71 +98,79 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            About Us
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <a class="dropdown-item" href="/chapters">Our Chapters</a>
-                            <a class="dropdown-item" href="/leadership">Leadership</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="chaptersDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            For Chapters
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="chaptersDropdown">
-                            <a class="dropdown-item" href="/calendar">FSC Calendar</a>
-                            <a class="dropdown-item" href="/documents">Important Documents</a>
-                            <a class="dropdown-item" href="https://app.chapterbuilder.com/" target="blank">Chapter Builder</a>
-                        </div>
-                    </li>
-                    <li class="nav-item logo-button no-underline">
-                        <a class="nav-link no-underline" href="/">
-                            <img src="{% static 'IFC/images/IFCLogo.png' %}" alt="Button Image" width="200" height="200">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://sexualviolence.rpi.edu/" target="_blank">Title IX</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Philanthropy-and-service">Philanthropy & Service</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="chaptersDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Recruitment
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="chaptersDropdown">
-                            <a class="dropdown-item" href="/recruitment">Why Join?</a>
-                            <a class="dropdown-item" href="/fall">Fall Recruitment</a>
-                            <a class="dropdown-item" href="/spring">Spring Recruitment</a>
-                            
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <!-- Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- About Us Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="/chapters">Our Chapters</a></li>
+                        <li><a class="dropdown-item" href="/leadership">Leadership</a></li>
+                    </ul>
+                </li>
+                <!-- For Chapters Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="forChaptersDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        For Chapters
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="forChaptersDropdown">
+                        <li><a class="dropdown-item" href="/calendar">FSC Calendar</a></li>
+                        <li><a class="dropdown-item" href="/documents">Important Documents</a></li>
+                        <li><a class="dropdown-item" href="https://app.chapterbuilder.com/" target="_blank">Chapter Builder</a></li>
+                    </ul>
+                </li>
+                <!-- Logo -->
+                <li class="nav-item logo-button no-underline">
+                    <a class="nav-link no-underline" href="/">
+                        <img src="{% static 'IFC/images/IFCLogo.png' %}" alt="Button Image" width="200" height="200">
+                    </a>
+                </li>
+                <!-- Title IX -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://sexualviolence.rpi.edu/" target="_blank">Title IX</a>
+                </li>
+                <!-- Philanthropy & Service -->
+                <li class="nav-item">
+                    <a class="nav-link" href="Philanthropy-and-service">Philanthropy & Service</a>
+                </li>
+                <!-- Recruitment Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="recruitmentDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Recruitment
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="recruitmentDropdown">
+                        <li><a class="dropdown-item" href="/recruitment">Why Join?</a></li>
+                        <li><a class="dropdown-item" href="/fall">Fall Recruitment</a></li>
+                        <li><a class="dropdown-item" href="/spring">Spring Recruitment</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     {% include 'IFC/breadcrumbs.html' %}
     
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         // Enable hover functionality for Bootstrap dropdowns
         $(document).ready(function () {
