@@ -144,3 +144,6 @@ def ThetaXi(request):
 
 def ZetaPsi(request):
     return render(request, 'IFC/chapterPages/ZetaPsi.html')
+
+def AlphaOmegaEpsilon(request):
+    return render(request, 'IFC/chapterPages/AlphaOmegaEpsilon.html')
