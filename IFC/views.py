@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .forms import UploadFileForm
+from django.http import HttpResponseRedirect
 
 def homepage(request):
     return render(request, 'IFC/homepage.html')
@@ -140,3 +141,21 @@ def ThetaXi(request):
 
 def ZetaPsi(request):
     return render(request, 'IFC/chapterPages/ZetaPsi.html')
+
+def uploadSuccess(request):
+    return render(request, 'IFC/uploadSuccess.html')
+
+def handle_uploaded_file(f):
+    with open("some/file/name.txt", "wb+") as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+def upload_file(request):
+    if request.method == "POST":
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            handle_uploaded_file(request.FILES["file"])
+            return HttpResponseRedirect("/uploadsuccess")
+    else:
+        form = UploadFileForm()
+    return render(request, "upload.html", {"form": form})
