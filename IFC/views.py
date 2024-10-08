@@ -146,7 +146,7 @@ def uploadSuccess(request):
     return render(request, 'IFC/uploadSuccess.html')
 
 def handle_uploaded_file(f):
-    with open("some/file/name.txt", "wb+") as destination:
+    with open("uploaded_file.txt", "wb+") as destination:
         for chunk in f.chunks():
             destination.write(chunk)
 
@@ -155,7 +155,7 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES["file"])
-            return HttpResponseRedirect("/uploadsuccess")
+            return HttpResponseRedirect("/upload")
     else:
         form = UploadFileForm()
-    return render(request, "upload.html", {"form": form})
+    return render(request, "IFC/upload_file.html", {"form": form})

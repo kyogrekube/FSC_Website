@@ -37,5 +37,7 @@ urlpatterns = [
     path("chapters/ThetaXi", views.ThetaXi, name="ThetaXi"),
     path("chapters/ZetaPsi", views.ZetaPsi, name="ZetaPsi"),
 
+
+    path("upload", views.upload_file),
     path("uploadsuccess", views.uploadSuccess)
 ]
