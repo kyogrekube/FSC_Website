@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User, Group, login_required
+from django.contrib.auth.models import User, Group
+from django.contrib.auth.decorators import login_required
 from .forms import ChapterForm
 from .models import Chapter
 
@@ -184,8 +185,13 @@ def ZetaPsi(request):
     return render(request, 'IFC/chapterPages/ZetaPsi.html')
 
 
-def editChapterInfo(request):
+def chapterInfoEdit(request):
     return render(request, 'IFC/chapterInfoEdit.html')
+
+
+def select_chapter(request):
+    chapter = Chapter.objects.all()
+    return render(request, 'IFC/select_chapter.html', {'chapters': chapter})
 
 
 #@login_required
