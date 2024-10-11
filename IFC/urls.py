@@ -53,11 +53,4 @@ urlpatterns = [
     path("chapters/TauKappaEpsilon", views.TauKappaEpsilon, name="TauKappaEpsilon"),
     path("chapters/ThetaXi", views.ThetaXi, name="ThetaXi"),
     path("chapters/ZetaPsi", views.ZetaPsi, name="ZetaPsi"),
-    
-    # Admin and authentication URLs
-    path('admin/', admin.site.urls),
-    path('create-accounts/', views.create_user_accounts, name='create_accounts'),
-    #These are for login pages
-    #path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),  # Default login view
-    #path('logout/', auth_views.LogoutView.as_view(next_page='/login/'), name='logout'),  # Logout view
 ]
