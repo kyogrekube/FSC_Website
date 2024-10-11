@@ -53,4 +53,7 @@ urlpatterns = [
     path("chapters/TauKappaEpsilon", views.TauKappaEpsilon, name="TauKappaEpsilon"),
     path("chapters/ThetaXi", views.ThetaXi, name="ThetaXi"),
     path("chapters/ZetaPsi", views.ZetaPsi, name="ZetaPsi"),
+    path("chapter/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
+    path('selectChapter', views.select_chapter, name="select_chapter"),
+    path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
 ]
