@@ -24,6 +24,6 @@ class Chapter(models.Model):
     president = models.CharField(max_length=255)
     info = models.TextField(max_length=900)  # A 900 character info blob
     chapter_size = models.PositiveIntegerField()  # Non-negative integer
-    
+
     def __str__(self):
         return self.name

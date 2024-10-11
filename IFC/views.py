@@ -13,7 +13,7 @@ def create_user_accounts(request):
         )
         print('Admin account created successfully')
 
-    # Create 
+    # Create
     if not Group.objects.filter(name='Chapter Users').exists():
         chapter_users_group = Group.objects.create(name='Chapter Users')
         print('Created chapter users grouping')
