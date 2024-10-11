@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from IFC import views  # Import your views from the IFC app
 
 urlpatterns = [
     path("", include("IFC.urls")),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('create-accounts/', views.create_user_accounts, name='create_accounts'),  # Add to link the create accounts view
+    # Lines below are used to create a login/logout page for NORMAL USERS
+    # path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),  # Default login view
+    # path('logout/', auth_views.LogoutView.as_view(next_page='/login/'), name='logout'),  # Logout view"""
 ]
