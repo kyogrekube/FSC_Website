@@ -1,6 +1,7 @@
 # myapp/models.py
 
 from django.db import models
+from django.utils.text import slugify
 
 """
 EXAMPLE OF HOW TO MAKE A TABLE:
@@ -24,6 +25,12 @@ class Chapter(models.Model):
     president = models.CharField(max_length=255)
     info = models.TextField(max_length=900)  # A 900 character info blob
     chapter_size = models.PositiveIntegerField()  # Non-negative integer
+    slug = models.SlugField(unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

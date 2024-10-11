@@ -25,7 +25,7 @@
             <p class="text-center">Please update your chapter's details below.</p>
             
             <form method='POST'>
-              
+              {% csrf_token %}
               <!-- Chapter Name -->
               <div class="form-group">
                 <label for="id_name">Chapter Name</label>

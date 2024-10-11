@@ -201,9 +201,10 @@ def chapter_detail(request, chapter_id):
 
 
 #@login_required
-def edit_chapter(request, chapter_id):
+def edit_chapter(request, chapter_name):
     # Get the chapter by ID (or use some other logic to assign chapters to users)
-    chapter = get_object_or_404(Chapter, id=chapter_id)
+    chapter_name = chapter_name.replace('-', ' ')
+    chapter = get_object_or_404(Chapter, name=chapter_name)
     
     # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
     # You might need to compare request.user with the user related to the chapter
@@ -212,7 +213,7 @@ def edit_chapter(request, chapter_id):
         form = ChapterForm(request.POST, instance=chapter)
         if form.is_valid():
             form.save()
-            return redirect('chapter_detail', chapter_id=chapter.id)  # Redirect to a chapter detail page
+            return redirect('/')  # Redirect to a chapter detail page
     else:
         form = ChapterForm(instance=chapter)
-    return render(request, 'chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
+    return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
