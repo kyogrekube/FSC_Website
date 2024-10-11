@@ -77,7 +77,8 @@ WSGI_APPLICATION = 'web_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        """THIS IS THE DEFAULT""" 'ENGINE': 'django.db.backends.sqlite3',
+        # THIS IS THE DEFAULT
+        'ENGINE': 'django.db.backends.sqlite3',
         # THIS IS THE DEFAULT 'NAME': BASE_DIR / 'db.sqlite3',
         'NAME': 'FSC_website_database',
         'USER': 'root',
