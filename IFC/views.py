@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
 
-from IFC.forms import acrUpload
+#from IFC.forms import acrUpload
 
 def homepage(request):
     return render(request, 'IFC/homepage.html')
@@ -148,20 +148,17 @@ def ZetaPsi(request):
 def uploadSuccess(request):
     return render(request, 'IFC/uploadSuccess.html')
 
-'''def handle_uploaded_file(f):
-    with open("uploaded_file.txt", "wb+") as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)'''
+def handleAcrFile(file, acr_std_id):
+    path = os.path.join('media/accreditation', str(acr_std_id))
 
+    fs = FileSystemStorage()
+    fs.save(os.path.join(path, file.name), file)
 
 def upload_file(request):
     if request.method == 'POST':
-        _acr_upload = acrUpload(request.POST, request.FILES)
-        if _acr_upload.is_valid():
-            file = request.FILES['file']
-            fs = FileSystemStorage()
-            fs.save(os.path.join('media', file.name), file)
-    else:
-        _acr_upload = acrUpload()
-
-    return render(request,"IFC/upload_file.html",{'form':_acr_upload})
+        acr_std_id = request.POST.get('acr_std_id')
+        file = request.FILES['file']
+        
+        handleAcrFile(file, acr_std_id)
+    
+    return render(request,"IFC/upload_file.html")

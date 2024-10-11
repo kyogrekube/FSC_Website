@@ -1,0 +1,10 @@
+.uploadcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.uploadfield {
+    width: 200px;
+    height: 200px;
+}
