@@ -1,13 +1,14 @@
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User, Group
+
 
 def create_user_accounts(request):
     # Create an admin account
     if not User.objects.filter(username='admin').exists():
         User.objects.create_superuser(
             username='admin',
-            email='', #Add an email here when we pass code to FSC
+            email='',   # Add an email here when we pass code to FSC
             password='adminPassword'
         )
         print('Admin account created successfully')
@@ -38,7 +39,6 @@ def create_user_accounts(request):
             print('Sigma Alpha Epsilon user created and added to chapter users grouping')
 
     return HttpResponse("Admin account and chapter user accounts created successfully!")
-
 
 
 # Requesting Webpages:
