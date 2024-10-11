@@ -194,21 +194,21 @@ def select_chapter(request):
     return render(request, 'IFC/select_chapter.html', {'chapters': chapter})
 
 
-#@login_required
+# @login_required
 def chapter_detail(request, chapter_id):
     chapter = get_object_or_404(Chapter, id=chapter_id)
     return render(request, 'chapters', {'chapter': chapter})
 
 
-#@login_required
+# @login_required
 def edit_chapter(request, chapter_name):
     # Get the chapter by ID (or use some other logic to assign chapters to users)
     chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
-    
+
     # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
     # You might need to compare request.user with the user related to the chapter
-    
+
     if request.method == 'POST':
         form = ChapterForm(request.POST, instance=chapter)
         if form.is_valid():
