@@ -6,6 +6,9 @@ __pycache__
 *.pyc
 *~
 
+#uploaded files
+media/
+
 # virtual environment
 .venv/
 
