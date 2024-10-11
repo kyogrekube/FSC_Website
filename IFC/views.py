@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
 
+from IFC.forms import acrUpload
+
 def homepage(request):
     return render(request, 'IFC/homepage.html')
 
@@ -151,11 +153,15 @@ def uploadSuccess(request):
         for chunk in f.chunks():
             destination.write(chunk)'''
 
+
 def upload_file(request):
     if request.method == 'POST':
-        file = request.FILES['document']
-#        print(file.name)
-#        print(file.size)
-        fs = FileSystemStorage()
-        fs.save(os.path.join('media', file.name), file)
-    return render(request, 'IFC/upload_file.html')
+        _acr_upload = acrUpload(request.POST, request.FILES)
+        if _acr_upload.is_valid():
+            file = request.FILES['file']
+            fs = FileSystemStorage()
+            fs.save(os.path.join('media', file.name), file)
+    else:
+        _acr_upload = acrUpload()
+
+    return render(request,"IFC/upload_file.html",{'form':_acr_upload})
