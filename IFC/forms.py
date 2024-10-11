@@ -1,5 +1,8 @@
 from django import forms
+from .models import Chapter
 
-#class acrUpload(forms.Form):
-#    section = forms.CharField(label="Accreditation section/requirement:",max_length=80)
-#    file = forms.FileField()
+
+class ChapterForm(forms.ModelForm):
+    class Meta:
+        model = Chapter
+        fields = ['name', 'letters', 'rush_chair', 'president', 'info', 'chapter_size']
