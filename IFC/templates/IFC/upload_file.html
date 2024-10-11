@@ -21,9 +21,10 @@
         {% include 'IFC/navbar.html' %}
     </div>
 
-    <form method="POST" class="post-form" enctype="multipart/form-data">  
+    <form method="POST" enctype="multipart/form-data">  
         {% csrf_token %}  
-        {{ form.as_p }}  
+        <input type="file" name="document">
+        <button type="submit">Upload File</button>
         <button type="submit" class="save btn btn-default">Save</button>  
     </form> 
 

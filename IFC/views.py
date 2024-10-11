@@ -1,7 +1,8 @@
+import os
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import UploadFileForm
 from django.http import HttpResponseRedirect
+from django.core.files.storage import FileSystemStorage
 
 def homepage(request):
     return render(request, 'IFC/homepage.html')
@@ -145,17 +146,16 @@ def ZetaPsi(request):
 def uploadSuccess(request):
     return render(request, 'IFC/uploadSuccess.html')
 
-def handle_uploaded_file(f):
+'''def handle_uploaded_file(f):
     with open("uploaded_file.txt", "wb+") as destination:
         for chunk in f.chunks():
-            destination.write(chunk)
+            destination.write(chunk)'''
 
 def upload_file(request):
-    if request.method == "POST":
-        form = UploadFileForm(request.POST, request.FILES)
-        if form.is_valid():
-            handle_uploaded_file(request.FILES["file"])
-            return HttpResponseRedirect("/upload")
-    else:
-        form = UploadFileForm()
-    return render(request, "IFC/upload_file.html", {"form": form})
+    if request.method == 'POST':
+        file = request.FILES['document']
+#        print(file.name)
+#        print(file.size)
+        fs = FileSystemStorage()
+        fs.save(os.path.join('media', file.name), file)
+    return render(request, 'IFC/upload_file.html')
