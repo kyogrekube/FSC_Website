@@ -147,3 +147,9 @@ def ZetaPsi(request):
 
 def AlphaOmegaEpsilon(request):
     return render(request, 'IFC/chapterPages/AlphaOmegaEpsilon.html')
+
+def AlphaPhi(request):
+    return render(request, 'IFC/chapterPages/AlphaPhi.html')
+
+def PiBetaPhi(request):
+    return render(request, 'IFC/chapterPages/PiBetaPhi.html')

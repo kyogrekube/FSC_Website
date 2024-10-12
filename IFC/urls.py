@@ -37,6 +37,8 @@ urlpatterns = [
     path("chapters/ThetaXi", views.ThetaXi, name="ThetaXi"),
     path("chapters/ZetaPsi", views.ZetaPsi, name="ZetaPsi"),
     path("chapters/AlphaOmegaEpsilon", views.AlphaOmegaEpsilon, name="AlphaOmegaEpsilon"),
+    path("chapters/AlphaPhi", views.AlphaPhi, name="AlphaPhi"),
+    path("chapters/PiBetaPhi", views.PiBetaPhi, name="PiBetaPhi"),
 
 
 ]
