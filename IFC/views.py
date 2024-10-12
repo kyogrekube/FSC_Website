@@ -152,3 +152,6 @@ def staff(request):
 
 def commitments(request):
     return render(request, 'IFC/commitments.html')
+
+def joining(request):
+    return render(request, 'IFC/joining.html')

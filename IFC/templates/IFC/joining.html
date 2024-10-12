@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Commitments - Fraternity & Sorority Commons</title>
+  
+  {% load static %}
+  <link rel="icon" type="image/x-icon" href="{% static 'IFC/images/favicon.png' %}" />
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>How to Join</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    h1 {
+      color: #a52a2a;
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    h2, h3 {
+      color: #4d4d4d;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 1.8em;
+    }
+
+    h3 {
+      font-size: 1.4em;
+    }
+
+    p, ul {
+      margin-bottom: 10px;
+      max-width: 800px;
+    }
+
+    ul {
+      margin-left: 20px;
+      list-style-type: disc;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 15px;
+      margin: 15px auto;
+      border-radius: 6px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+    }
+
+    .note {
+      font-size: 0.9em;
+      color: #666666;
+      font-style: italic;
+    }
+    
+    #main-content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 10px;
+    }
+
+    .breadcrumb {
+      color: #a52a2a;
+      margin-bottom: 10px;
+      font-size: 0.9em;
+    }
+
+    /* Full-width Header and Footer */
+    header, footer {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #333333; /* Example background color */
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Full-width Navbar -->
+  <header>
+    {% include 'IFC/navbar.html' %}
+  </header>
+
+  <div id="main-content">
+
+    <h1 style="text-align: center;">How to Join!</h1>
+    <div class="section">
+      <p>Joining a fraternity or sorority is a personal choice that can sometimes feel overwhelming. To help ease this process and support better decision-making, we encourage all interested students (potential new members) to learn about the organizations and ask questions about recruitment, intake, and what membership entails.</p>
+    </div>
+
+    <div class="section">
+      <h2>Institutional Eligibility Criteria</h2>
+      <p>Rensselaer operates under a "deferred recruitment" policy, meaning students are eligible to join a social fraternity or sorority only from their second semester onward. Transfer students who have earned 12 transferable credit hours from another institution may join immediately. Regardless of the timing, candidates must meet these requirements before they can begin the recruitment or intake process:</p>
+    </div>
+
+    <div class="section">
+      <h2>Eligibility Requirements</h2>
+      <ul>
+        <li>Complete a minimum of 12 credit hours.</li>
+        <li>Maintain a cumulative GPA of at least 2.5 or the organization’s required GPA, whichever is higher.</li>
+        <li>Transfer students need a cumulative GPA of 2.5 from their previous institution and 12 transferable credits.</li>
+        <li>First-year January admits are eligible starting the following fall semester.</li>
+        <li>Be in good standing with the university conduct process and not on probation.</li>
+      </ul>
+      <p class="note">Note: An exception is granted for our gender-inclusive fraternity within the Professional Fraternity/Sorority community, allowing membership for first-year students without a university-established GPA.</p>
+    </div>
+
+    <div class="section">
+      <h2>Post Invitation/Bid Requirements</h2>
+      <ul>
+        <li>Attend FSC New Member Orientation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>IFC Recruitment</h3>
+      <p>The Interfraternity Council (IFC) comprises 22 member chapters. Potential new members may join through formal recruitment in the spring or an informal process in both spring and fall. Formal recruitment is scheduled for January 19 – February 1, 2023.</p>
+    </div>
+
+    <div class="section">
+      <h3>MSFC Intake/Recruitment</h3>
+      <p>The Multicultural Sorority & Fraternity Council (MSFC) includes six intercultural organizations affiliated with national councils like NAPA, NALFO, and NPHC. These groups host informational sessions each semester, though reaching out to individual chapters or attending events is the best way to gather more details on their recruitment practices.</p>
+    </div>
+
+    <div class="section">
+      <h3>RPC Recruitment</h3>
+      <p>The Panhellenic Council consists of four chapters: three NPC chapters and one associate organization. Recruitment can be through the formal spring process or informal, ongoing recruitment (Continuous Open Bidding) in the fall. The main recruitment period is typically held in late January.</p>
+      <p>RPI Panhellenic’s primary recruitment is set for January 14 – 19, 2025. For more details, stay tuned on Instagram or contact us at <a href="mailto:rpi.panhel.vpr@gmail.com">rpi.panhel.vpr@gmail.com</a>. We’re excited to welcome you into our community!</p>
+    </div>
+  </div>
+
+  <!-- Full-width Footer -->
+  <footer>
+    {% include 'IFC/footer.html' %}
+  </footer>
+</body>
+</html>

@@ -38,5 +38,6 @@ urlpatterns = [
     path("chapters/ZetaPsi", views.ZetaPsi, name="ZetaPsi"),
     path("staff", views.staff, name="staff"),
     path("commitments", views.commitments, name="commitments"),
-
+    path("joining", views.joining, name="joining"),
+    
 ]
