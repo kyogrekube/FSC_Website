@@ -41,9 +41,7 @@
                         {% csrf_token %}
                     </form>
 
-                    <button id="get-uploads-1" class="get-uploads">View Uploads</button>
-                    <ul id="uploads-1">
-                    </ul>
+                    <a href="#" onClick="fileView=window.open(window.location.href + '/view?sec=1.1','fileView','width=600,height=400'); return false;">View Uploads</a>
                 </div>
 
                 <!--
@@ -97,14 +95,7 @@
         });
     }
 
-    var get_files_buttons = document.getElementsByClassName('get-uploads');
-    for (var i = 0; i < get_files_buttons.length; ++i) {
-        var btn = get_files_buttons[i];
-        btn.onclick = function(){
-            
-            $('#uploads-' + ($(btn).attr('id').slice(-1))).append('<li>LIST ITEM</li>')
-        }
-    }
+
 
 
 </script>
