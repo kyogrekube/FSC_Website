@@ -58,7 +58,8 @@ def contacts(request):
 
 
 def ourChapters(request):
-    return render(request, 'IFC/ourChapters.html')
+    chapters = Chapter.objects.all()
+    return render(request, 'IFC/ourChapters.html', {'chapters': chapters})
 
 
 def schedule(request):
@@ -217,3 +218,12 @@ def edit_chapter(request, chapter_name):
     else:
         form = ChapterForm(instance=chapter)
     return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
+
+
+def chapter_list(request):
+    chapters = Chapter.objects.all()
+    return render(request, 'IFC/chapter_list.html', {'chapters': chapters})
+
+def chapter_detail(request, slug):
+    chapter = get_object_or_404(Chapter, slug=slug)
+    return render(request, 'IFC/<slug>.html', {'chapter': chapter})
