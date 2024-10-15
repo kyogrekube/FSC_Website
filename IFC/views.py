@@ -145,6 +145,40 @@ def ThetaXi(request):
 def ZetaPsi(request):
     return render(request, 'IFC/chapterPages/ZetaPsi.html')
 
+
+def chapterInfoEdit(request):
+    return render(request, 'IFC/chapterInfoEdit.html')
+
+
+def select_chapter(request):
+    chapter = Chapter.objects.all()
+    return render(request, 'IFC/select_chapter.html', {'chapters': chapter})
+
+
+# @login_required
+def chapter_detail(request, chapter_id):
+    chapter = get_object_or_404(Chapter, id=chapter_id)
+    return render(request, 'chapters', {'chapter': chapter})
+
+
+# @login_required
+def edit_chapter(request, chapter_name):
+    # Get the chapter by ID (or use some other logic to assign chapters to users)
+    chapter_name = chapter_name.replace('-', ' ')
+    chapter = get_object_or_404(Chapter, name=chapter_name)
+
+    # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
+    # You might need to compare request.user with the user related to the chapter
+
+    if request.method == 'POST':
+        form = ChapterForm(request.POST, instance=chapter)
+        if form.is_valid():
+            form.save()
+            return redirect('/')  # Redirect to a chapter detail page
+    else:
+        form = ChapterForm(instance=chapter)
+    return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
+
 def AlphaOmegaEpsilon(request):
     return render(request, 'IFC/chapterPages/AlphaOmegaEpsilon.html')
 
@@ -153,3 +187,12 @@ def AlphaPhi(request):
 
 def PiBetaPhi(request):
     return render(request, 'IFC/chapterPages/PiBetaPhi.html')
+
+def SigmaDelta (request):
+    return render(request, 'IFC/chapterPages/SigmaDelta.html')
+
+def AlphaGammaDelta (request):
+    return render(request, 'IFC/chapterPages/AlphaGammaDelta.html')
+
+def AlphaPhiAlpha (request):
+    return render(request, 'IFC/chapterPages/AlphaPhiAlpha.html')
