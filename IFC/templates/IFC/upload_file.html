@@ -33,7 +33,8 @@
                         <span class="text">Chapter term GPA exceeds the university's all-undergraduate men's/women's average, respective to the chapter.</span>
                     </div>
                     <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
-                        <label class="bttn"><input type="file" class="hidden file-select" name="file" required>Browse</label>
+                        <label for="file1" class="bttn">Browse</label>
+                        <input type="file" id="file1" class="hidden file-select" name="file" required/>
                         <input type="submit" class="bttn" value="Upload File">
                         <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.1">
                         {% csrf_token %}
@@ -41,7 +42,122 @@
                 </div>
 
                 <div class="row">
-                    <span class="text">etc... (fill in later)</span>
+                    <span class="text">1.2</span>
+                    <div class="description">
+                        <span class="text">Chapter cumulative GPA exceeds the university's all-undergraduate men's/women's average, respective to the chapter.</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file2" class="bttn">Browse</label>
+                        <input type="file" id="file2" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.2">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.3</span>
+                    <div class="description">
+                        <span class="text">Chapter new members will have maintained a term GPA above 2.50 while participating in the new member orientation/education program. Chapters without a new member class for the selected term will receive full points for the selection.</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file3" class="bttn">Browse</label>
+                        <input type="file" id="file3" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.3">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.4</span>
+                    <div class="description">
+                        <span class="text">Chapter has a GPA requirement for potential new members to be considered eligible for membership intake or recruitment. • Chapter verifies the potential new members' GPAs through the FSC and/or Council platforms and extends invitations only after the PNM has been approved as eligible.</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file4" class="bttn">Browse</label>
+                        <input type="file" id="file4" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.4">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.5</span>
+                    <div class="description">
+                        <span class="text">At least 65% of all members are above a 2.50 cumulative GPA each semester.</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file5" class="bttn">Browse</label>
+                        <input type="file" id="file5" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.5">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.6</span>
+                    <div class="description">
+                        <span class="text">The chapter has a scholarship/academic chairperson who maintains and manages the chapter's scholastic efforts.</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file6" class="bttn">Browse</label>
+                        <input type="file" id="file6" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.6">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.7 (BONUS)</span>
+                    <div class="description">
+                        <span class="text">Chapter President at time of submission has a cumulative GPA above a 2.70</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file7" class="bttn">Browse</label>
+                        <input type="file" id="file7" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.7">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.8 (BONUS)</span>
+                    <div class="description">
+                        <span class="text">Chapter has current members within the Omega Mu Chapter of Order of Omega during the accreditation year.</span>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file8" class="bttn">Browse</label>
+                        <input type="file" id="file8" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.8">
+                        {% csrf_token %}
+                    </form>
+                </div>
+
+                <div class="row">
+                    <span class="text">1.9 (BONUS)</span>
+                    <div class="description">
+                        <span class="text">The chapter has implemented a program aimed at promoting student/faculty interaction and improving relations. This program may include, but is not limited to, the following components:</span>
+                        <ul>
+                            <li>Inviting faculty members (Professors, not Staff) to deliver educational sessions or presentations to the chapter.</li>
+                            <li>Organizing discussions led by a faculty member.</li>
+                            <li>Arranging social interactions for members of the chapter and faculty members.</li>
+                            <li>Hosting appreciation days or events for faculty members organized by the chapter.</li>
+                            <li>To receive maximum points, the program and/or equivalent must have been held more than once during.</li>
+                        </ul>
+                    </div>
+                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                        <label for="file9" class="bttn">Browse</label>
+                        <input type="file" id="file9" class="hidden file-select" name="file" required/>
+                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.9">
+                        {% csrf_token %}
+                    </form>
                 </div>
             </div>
         </main>
@@ -65,7 +181,7 @@
         item.addEventListener("change", function(){
             
             var file = $(this)[0].files[0].name;
-            $(this).parent().html('<input type="file" class="hidden file-select" name="file" required>' + file);
+            $('label[for="'+ $(this).attr('id') +'"]').text(file);
         });
     }
 </script>
