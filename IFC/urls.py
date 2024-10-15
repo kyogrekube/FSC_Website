@@ -56,6 +56,5 @@ urlpatterns = [
     path("chapter/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
     path('selectChapter', views.select_chapter, name="select_chapter"),
     path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
-    path("upload", views.upload_file),
-    path("uploadsuccess", views.uploadSuccess)
+    path("upload", views.upload_file)
 ]

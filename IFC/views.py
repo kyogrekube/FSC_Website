@@ -254,9 +254,6 @@ def edit_chapter(request, chapter_name):
         form = ChapterForm(instance=chapter)
     return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
 
-def uploadSuccess(request):
-    return render(request, 'IFC/uploadSuccess.html')
-
 def handleAcrFile(file, acr_std_id):
     path = os.path.join('media/accreditation', str(acr_std_id))
 
