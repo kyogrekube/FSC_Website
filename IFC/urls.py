@@ -45,6 +45,4 @@ urlpatterns = [
     path("chapters/SigmaDelta", views.SigmaDelta, name="SigmaDelta"),
     path("chapters/AlphaGammaDelta", views.AlphaGammaDelta, name="AlphaGammaDelta"),
     path("chapters/AlphaPhiAlpha", views.AlphaPhiAlpha, name="AlphaPhiAlpha"),
-
-
 ]

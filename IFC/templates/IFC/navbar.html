@@ -99,58 +99,66 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Toggler Button -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <!-- Home -->
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-
                     </li>
+                    <!-- About Us Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             About Us
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <a class="dropdown-item" href="/chapters">Our Chapters</a>
-                            <a class="dropdown-item" href="/leadership">Leadership</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="/chapters">Our Chapters</a></li>
+                            <li><a class="dropdown-item" href="/leadership">Leadership</a></li>
+                        </ul>
                     </li>
+                    <!-- For Chapters Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="chaptersDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="forChaptersDropdown" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             For Chapters
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="chaptersDropdown">
-                            <a class="dropdown-item" href="/calendar">IFC Calendar</a>
-                            <a class="dropdown-item" href="/documents">Important Documents</a>
-                            <a class="dropdown-item" href="https://app.chapterbuilder.com/" target="blank">Chapter Builder</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="forChaptersDropdown">
+                            <li><a class="dropdown-item" href="/calendar">FSC Calendar</a></li>
+                            <li><a class="dropdown-item" href="/documents">Important Documents</a></li>
+                            <li><a class="dropdown-item" href="https://app.chapterbuilder.com/" target="_blank">Chapter Builder</a></li>
+                        </ul>
                     </li>
+                    <!-- Logo -->
                     <li class="nav-item logo-button no-underline">
                         <a class="nav-link no-underline" href="/">
                             <img src="{% static 'IFC/images/IFCLogo.png' %}" alt="Button Image" width="200" height="200">
                         </a>
                     </li>
+                    <!-- Title IX -->
                     <li class="nav-item">
                         <a class="nav-link" href="https://sexualviolence.rpi.edu/" target="_blank">Title IX</a>
                     </li>
+                    <!-- Philanthropy & Service -->
                     <li class="nav-item">
                         <a class="nav-link" href="Philanthropy-and-service">Philanthropy & Service</a>
                     </li>
+                    <!-- Recruitment Dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="chaptersDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="recruitmentDropdown" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Recruitment
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="chaptersDropdown">
-                            <a class="dropdown-item" href="/recruitment">Why Join?</a>
-                            <a class="dropdown-item" href="/fall">Fall Recruitment</a>
-                            <a class="dropdown-item" href="/spring">Spring Recruitment</a>
-                            
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="recruitmentDropdown">
+                            <li><a class="dropdown-item" href="/recruitment">Why Join?</a></li>
+                            <li><a class="dropdown-item" href="/fall">Fall Recruitment</a></li>
+                            <li><a class="dropdown-item" href="/spring">Spring Recruitment</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
