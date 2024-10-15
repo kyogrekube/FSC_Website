@@ -6,17 +6,21 @@
     padding: 10px;
     border: 1px solid #ddd;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .text {
     flex-grow: 1;
 }
 
+.hstack {
+    display: inline-block;
+}
+
 .description {
-    width: 50%;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 65%;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .upload-form {
@@ -45,6 +49,15 @@
 .bttn:hover {
     background-color: #FFFFFF;
     color: #FF2828;
+}
+
+.item {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.bonus {
+    font-size: 15px;
 }
 
 .hidden {
