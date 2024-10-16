@@ -1,11 +1,14 @@
 import os
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.conf import settings
 from .forms import ChapterForm
 from .models import Chapter
+from .functions import get_trashbin_rename
 
 
 def create_user_accounts(request):
@@ -268,3 +271,48 @@ def upload_file(request):
         handleAcrFile(file, acr_std_id)
     
     return render(request,"IFC/upload_file.html")
+
+def file_list(request):
+    section = request.GET.get('sec', 'none')
+    root_path = '/media/accreditation/'+str(section)+'/'
+    os_path = str(settings.BASE_DIR) + root_path
+
+    files = []
+    #print("Path="+path)
+    try:
+        files = os.listdir(os_path)
+    except FileNotFoundError:
+        files = []
+
+    print("Files b4:" + str(files))
+    files = [x for x in files if x != "deleted"]
+    print("Files after:" + str(files))
+
+    return render(request, 'IFC/filelist.html', {'files':files, 'section':str(section)})
+
+def file_get(request):
+    sec = str(request.GET.get('sec', 'none'))
+    fname = str(request.GET.get('f', 'none'))
+    root_path = '/media/accreditation/'+str(sec)+'/'
+    os_path = str(settings.BASE_DIR) + root_path
+
+    #get directory contents again for security check
+    files = []
+    try:
+        files = os.listdir(os_path)
+    except FileNotFoundError:
+        files = []
+    
+    #security check
+    if (fname in files):
+        return FileResponse(open(os_path + fname, 'rb'), as_attachment=True, filename=fname)
+    else:
+        return redirect('/upload/list?sec=' + sec)
+
+def file_rm(request):
+    sec = str(request.GET.get('sec', 'none'))
+    fname = str(request.GET.get('f', 'none'))
+    path = str(settings.BASE_DIR) + '/media/accreditation/' + sec + '/'
+    #os.rename(path + fname, path + 'deleted/' + fname)
+    os.remove(path + fname)
+    return redirect('/upload/list?sec=' + sec)

@@ -1,0 +1,15 @@
+file list
+<html lang="en">
+    <ul>
+        {% for file in files %}
+        <!--<a href="{{file.url}}">{{ file.name }}</a>-->
+        <li>
+            <span class="text">{{ file }}</span>
+            <a href="/upload/get?sec={{ section }}&f={{ file }}">download</a>
+            <a href="/upload/rm?sec={{ section }}&f={{ file }}">delete</a>
+        </li>
+        {% empty %}
+        <li>(empty)</li>
+        {% endfor %}
+    </ul>
+</html>
