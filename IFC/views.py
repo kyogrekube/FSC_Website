@@ -5,45 +5,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import ChapterForm
 from .models import Chapter
 
-
-def create_user_accounts(request):
-    # Create an admin account
-    if not User.objects.filter(username='admin').exists():
-        User.objects.create_superuser(
-            username='admin',
-            email='',   # Add an email here when we pass code to FSC
-            password='adminPassword'
-        )
-        print('Admin account created successfully')
-
-    # Create
-    if not Group.objects.filter(name='Chapter Users').exists():
-        chapter_users_group = Group.objects.create(name='Chapter Users')
-        print('Created chapter users grouping')
-
-        # Create user for Phi Gamma Delta
-        if not User.objects.filter(username='Phi_Gamma_Delta').exists():
-            phi_gamma_delta_user = User.objects.create_user(
-                username='phi_gamma_delta',
-                email='',
-                password='password123'
-            )
-            phi_gamma_delta_user.groups.add(chapter_users_group)
-            print('Phi Gamma Delta user created and added to chapter users grouping')
-
-        # Create user for Sigma Alpha Epsilon
-        if not User.objects.filter(username='Sigma_Alpha_Epsilon').exists():
-            sigma_alpha_epsilon_user = User.objects.create_user(
-                username='sigma_alpha_epsilon',
-                email='',
-                password='password123'
-            )
-            sigma_alpha_epsilon_user.groups.add(chapter_users_group)
-            print('Sigma Alpha Epsilon user created and added to chapter users grouping')
-
-    return HttpResponse("Admin account and chapter user accounts created successfully!")
-
-
 # Requesting Webpages:
 def homepage(request):
     return render(request, 'IFC/homepage.html')
