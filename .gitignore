@@ -10,3 +10,7 @@ __pycache__
 .venv/
 
 # VS Code (NOT EVERYONE WILL HAVE VSCODE, FIGURE OUT UNIVERSAL LAUNCHER)
+
+
+#file uploads
+media/
