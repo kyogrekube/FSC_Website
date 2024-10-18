@@ -130,9 +130,6 @@ def LambdaChiAlpha(request):
     return render(request, 'IFC/chapterPages/LambdaChiAlpha.html')
 
 
-def PhiGammaDelta(request):
-    return render(request, 'IFC/chapterPages/PhiGammaDelta.html')
-
 
 def PhiKappaTheta(request):
     return render(request, 'IFC/chapterPages/PhiKappaTheta.html')

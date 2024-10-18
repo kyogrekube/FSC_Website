@@ -39,7 +39,6 @@ urlpatterns = [
     path("chapters/DeltaPhi", views.DeltaPhi, name="DeltaPhi"),
     path("chapters/DeltaTauDelta", views.DeltaTauDelta, name="DeltaTauDelta"),
     path("chapters/LambdaChiAlpha", views.LambdaChiAlpha, name="LambdaChiAlpha"),
-    path("chapters/PhiGammaDelta", views.PhiGammaDelta, name="PhiGammaDelta"),
     path("chapters/PhiKappaTheta", views.PhiKappaTheta, name="PhiKappaTheta"),
     path("chapters/PhiMuDelta", views.PhiMuDelta, name="PhiMuDelta"),
     path("chapters/PhiSigmaKappa", views.PhiSigmaKappa, name="PhiSigmaKappa"),
