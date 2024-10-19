@@ -155,3 +155,6 @@ def commitments(request):
 
 def joining(request):
     return render(request, 'IFC/joining.html')
+
+def accountability(request):
+    return render(request, 'IFC/accountability.html')

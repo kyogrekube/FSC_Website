@@ -39,5 +39,5 @@ urlpatterns = [
     path("staff", views.staff, name="staff"),
     path("commitments", views.commitments, name="commitments"),
     path("joining", views.joining, name="joining"),
-    
+    path("accountability", views.accountability, name="accountability"),
 ]
