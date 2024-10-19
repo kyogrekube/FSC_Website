@@ -1,12 +1,6 @@
 <form method='POST'>
     {% csrf_token %}
-    <!-- Chapter Name -->
-    <div class="form-group">
-      <label for="id_name">Chapter Name</label>
-      {{ form.name }}
-      <small class="form-text text-muted">The official name of your chapter (e.g., Alpha Chapter).</small>
-    </div>
-    
+
     <!-- Chapter Letters -->
     <div class="form-group">
       <label for="id_letters">Chapter Letters</label>
