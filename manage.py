@@ -3,6 +3,10 @@
 import os
 import sys
 from django.core.management.commands.runserver import Command as runserver
+import django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_project.settings')
+django.setup()  # Initialize Django
+from django.contrib.auth.models import User
 
 runserver.default_port = "80"  # Running on port 80
 
@@ -21,10 +25,6 @@ CHAPTER_NAMES = [
 
 def create_users():
     """Create admin and chapter users if they don't exist."""
-    import django
-    django.setup()  # Initialize Django
-    from django.contrib.auth.models import User
-
     # Create admin user
     if not User.objects.filter(username='fscAdminUser').exists():
         User.objects.create_superuser(
@@ -50,7 +50,6 @@ def create_users():
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IFC.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
