@@ -25,24 +25,34 @@
 
         <!-- Main Content -->
         <main class="main-content">
+
+            <select class="div-toggle" data-target=".my-info-1">
+                <option value="orange" data-show=".citrus">Orange</option>
+                <option value="lemon" data-show=".citrus">Lemon</option>
+                <option value="apple" data-show=".pome">Apple</option>
+                <option value="pear" data-show=".pome">Pear</option>
+            </select>
+
             <div class="container">
+                {% for item in acr_data %}
                 <div class="row">
                     <ul class="list-unstyled hstack">
-                        <li><span class="text item">1.1</span></li>
+                        <li><span class="text item">{{ item.section }}</span></li>
                     </ul>
                     <div class="description hstack">
-                        <span class="text">Chapter term GPA exceeds the university's all-undergraduate men's/women's average, respective to the chapter.</span>
+                        <span class="text">{{ item.description }}</span>
                     </div>
                     <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
-                        <label for="file-1" class="bttn">Browse</label>
-                        <input type="file" id="file-1" class="hidden file-select" name="file" required/>
+                        <label for="file-{{ item.section }}" class="bttn">Browse</label>
+                        <input type="file" id="file-{{ item.section }}" class="hidden file-select" name="file" required/>
                         <input type="submit" class="bttn" value="Upload File">
-                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.1">
+                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="{{ item.section }}">
                         {% csrf_token %}
                     </form>
 
-                    <a href="#" onClick="fileView=window.open('/upload/list?sec=1.1','fileView','width=600,height=400'); return false;">View Uploads</a>
+                    <a href="#" onClick="fileView=window.open('/upload/list?sec={{ item.section }}','fileView','width=600,height=400'); return false;">View Uploads</a>
                 </div>
+                {% endfor %}
 
                 <!--
                 <div class="row">

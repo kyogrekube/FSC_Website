@@ -1,4 +1,5 @@
 import os
+import json
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, FileResponse
@@ -195,7 +196,14 @@ def upload_file(request):
         
         handleAcrFile(file, acr_std_id)
     
-    return render(request,"IFC/upload_file.html")
+    acr_data_path = os.path.join(settings.BASE_DIR, 'IFC\\static\\IFC\\json\\accreditation.json')
+    file = open(acr_data_path, 'r')
+    acr_data = json.load(file)
+    print("ACR DATA:" + str(acr_data["1"]))
+    #acr_data = acr_data['1']
+
+    return render(request,"IFC/upload_file.html", {"acr_data": acr_data["1"]})
+#    return render(request,"IFC/upload_file.html", {'acr_data': acr_data})
 
 def file_list(request):
     section = request.GET.get('sec', 'none')
