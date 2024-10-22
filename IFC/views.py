@@ -240,7 +240,7 @@ def accreditation_file_get(request):
     if (fname in files):
         return FileResponse(open(os_path + fname, 'rb'), as_attachment=True, filename=fname)
     else:
-        return redirect('/upload/list?sec=' + sec)
+        return redirect('/accreditation/list?sec=' + sec)
 
 def accreditation_file_rm(request):
     sec = str(request.GET.get('sec', 'none'))
@@ -248,4 +248,4 @@ def accreditation_file_rm(request):
     path = str(settings.BASE_DIR) + '/media/accreditation/' + sec + '/'
     #os.rename(path + fname, path + 'deleted/' + fname)
     os.remove(path + fname)
-    return redirect('/upload/list?sec=' + sec)
+    return redirect('/accreditation/list?sec=' + sec)
