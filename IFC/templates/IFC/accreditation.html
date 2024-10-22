@@ -26,6 +26,8 @@
         <!-- Main Content -->
         <main class="main-content">
 
+            <iframe name="form-redirect" style="display:none;"></iframe>
+
             <div class="container">
                 {% for item in acr_data %}
                 <div class="row">
@@ -35,10 +37,10 @@
                     <div class="description hstack">
                         <span class="text">{{ item.description }}</span>
                     </div>
-                    <form action="/accreditation" method="POST" class="upload-form" enctype="multipart/form-data">
-                        <label for="file-{{ item.section }}" class="bttn">Browse</label>
+                    <form action="/accreditation" method="POST" id="{{ item.section }}" class="upload-form" target="form-redirect" enctype="multipart/form-data">
+                        <label id="browse-label-{{ item.section }}" for="file-{{ item.section }}" class="browse-label bttn">Browse</label>
                         <input type="file" id="file-{{ item.section }}" class="hidden file-select" name="file" required/>
-                        <input type="submit" class="bttn" value="Upload File">
+                        <input type="submit" id="submit-{{ item.section }}" class="submit bttn" value="Upload File">
                         <input type="hidden" id="acr_section" name="acr_section" value="{{ item.section }}">
                         {% csrf_token %}
                     </form>
@@ -46,37 +48,8 @@
                     <a href="#" onClick="fileView=window.open('/accreditation/list?sec={{ item.section }}','fileView','width=600,height=400'); return false;">View Uploads</a>
                 </div>
                 {% endfor %}
-
-                <!--
-                <div class="row">
-                    <ul class="list-unstyled hstack">
-                        <li><span class="text item">1.9</span></li>
-                        <li><span class="text bonus">BONUS</span></li>
-                    </ul>
-                    <div class="description">
-                        <span class="text">The chapter has implemented a program aimed at promoting student/faculty interaction and improving relations. This program may include, but is not limited to, the following components:</span>
-                        <ul>
-                            <li>Inviting faculty members (Professors, not Staff) to deliver educational sessions or presentations to the chapter.</li>
-                            <li>Organizing discussions led by a faculty member.</li>
-                            <li>Arranging social interactions for members of the chapter and faculty members.</li>
-                            <li>Hosting appreciation days or events for faculty members organized by the chapter.</li>
-                            <li>To receive maximum points, the program and/or equivalent must have been held more than once during.</li>
-                        </ul>
-                    </div>
-                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
-                        <label for="file9" class="bttn">Browse</label>
-                        <input type="file" id="file9" class="hidden file-select" name="file" required/>
-                        <input type="submit" class="bttn" value="Upload File">
-                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="1.9">
-                        {% csrf_token %}
-                    </form>
-                </div>
-                -->
             </div>
         </main>
-
-
-        
 
         <!-- Footer -->
         {% include 'IFC/footer.html' %}
@@ -88,18 +61,58 @@
 </body>
 
 <script>
-    var cusid_ele = document.getElementsByClassName('file-select');
-    for (var i = 0; i < cusid_ele.length; ++i) {
-        var item = cusid_ele[i];  
-        item.addEventListener("change", function(){
-            
-            var file = $(this)[0].files[0].name;
-            $('label[for="'+ $(this).attr('id') +'"]').text(file);
-        });
+
+    $('.file-select').addEventListener('change', function(){
+        var sec_id = $(this).parent().attr('id');
+
+        var file_select_label = $('#browse-label-' + sec_id);
+        var filename = $(this)[0].files[0].name;
+
+        file_select_label.text(filename);
+        submit_bttn.removeClass('noHover');
+    })
+
+    $('.submit').click(function(){
+            $(this).addClass("noHover");
+
+            var browse_label = $('#browse-label-' + sec_id);
+            browse_label.text('Browse');
+
+            var file_select = $('#file-' + sec_id);
+            file_select.val('');
+        })
+
+    var sections = document.getElementsByClassName("upload-form");
+    //console.log(sections);
+    for (var i = 0; i < sections.length; i++)
+    {
+        var sec = sections.item(i);
+        console.log(sec);
+        var sec_id = sec.parent().attr('id');
+        console.log("sec_id: " + sec_id);
+
+        file_select_label = '#browse-label-' + sec_id;
+        file_select = '#file-' + sec_id;
+        submit_bttn = '#submit-' + sec_id;
+
+        //when a file is selected, update the browse button label and enable the upload button
+        file_select.addEventListener('change', function(){
+            var filename = $(this)[0].files[0].name;
+            file_select_label.text(filename);
+
+            submit_bttn.removeClass('noHover');
+        })
+
+        submit_bttn.click(function(){
+            $(this).addClass("noHover");
+
+            var browse_label = $('#browse-label-' + sec_id);
+            browse_label.text('Browse');
+
+            var file_select = $('#file-' + sec_id);
+            file_select.val('');
+        })
     }
-
-
-
 
 </script>
 

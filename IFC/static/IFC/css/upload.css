@@ -67,6 +67,13 @@
     opacity: 0;
 }
 
+.noHover {
+    pointer-events: none;
+    background-color: #FFAAAA;
+    color: #FFFFFF;
+    border-color: #FFAAAA;
+}
+
 /*
 
 .btn {
