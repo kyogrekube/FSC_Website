@@ -5,8 +5,8 @@ file list
         <!--<a href="{{file.url}}">{{ file.name }}</a>-->
         <li>
             <span class="text">{{ file }}</span>
-            <a href="/upload/get?sec={{ section }}&f={{ file }}">download</a>
-            <a href="/upload/rm?sec={{ section }}&f={{ file }}">delete</a>
+            <a href="/accreditation/get?sec={{ section }}&f={{ file }}">download</a>
+            <a href="/accreditation/rm?sec={{ section }}&f={{ file }}">delete</a>
         </li>
         {% empty %}
         <li>(empty)</li>

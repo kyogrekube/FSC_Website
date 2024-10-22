@@ -35,15 +35,15 @@
                     <div class="description hstack">
                         <span class="text">{{ item.description }}</span>
                     </div>
-                    <form action="/upload" method="POST" class="upload-form" enctype="multipart/form-data">
+                    <form action="/accreditation" method="POST" class="upload-form" enctype="multipart/form-data">
                         <label for="file-{{ item.section }}" class="bttn">Browse</label>
                         <input type="file" id="file-{{ item.section }}" class="hidden file-select" name="file" required/>
                         <input type="submit" class="bttn" value="Upload File">
-                        <input type="hidden" id="acr_std_id" name="acr_std_id" value="{{ item.section }}">
+                        <input type="hidden" id="acr_section" name="acr_section" value="{{ item.section }}">
                         {% csrf_token %}
                     </form>
 
-                    <a href="#" onClick="fileView=window.open('/upload/list?sec={{ item.section }}','fileView','width=600,height=400'); return false;">View Uploads</a>
+                    <a href="#" onClick="fileView=window.open('/accreditation/list?sec={{ item.section }}','fileView','width=600,height=400'); return false;">View Uploads</a>
                 </div>
                 {% endfor %}
 

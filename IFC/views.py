@@ -194,13 +194,15 @@ def accreditation_upload(request):
         acr_section = request.POST.get('acr_section')
         file = request.FILES['file']
         
-        handleAcrFile(file, acr_std_id)
-    
-    acr_data_path = os.path.join(settings.BASE_DIR, 'IFC\\static\\IFC\\json\\accreditation.json')
-    file = open(acr_data_path, 'r')
-    acr_data = json.load(file)
+        handleAcrFile(file, acr_section)
+        return redirect('/accreditation')
 
-    return render(request,"IFC/upload_file.html", {"acr_data": acr_data["1"]})
+    else:
+        acr_data_path = os.path.join(settings.BASE_DIR, 'IFC\\static\\IFC\\json\\accreditation.json')
+        file = open(acr_data_path, 'r')
+        acr_data = json.load(file)
+
+        return render(request,"IFC/accreditation.html", {"acr_data": acr_data["1"]})
 #    return render(request,"IFC/upload_file.html", {'acr_data': acr_data})
 
 def accreditation_file_list(request):
