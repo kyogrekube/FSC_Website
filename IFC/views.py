@@ -189,7 +189,7 @@ def handleAcrFile(file, acr_std_id):
     fs = FileSystemStorage()
     fs.save(os.path.join(path, file.name), file)
 
-def upload_file(request):
+def accreditation_upload(request):
     if request.method == 'POST':
         acr_std_id = request.POST.get('acr_std_id')
         file = request.FILES['file']
@@ -205,7 +205,7 @@ def upload_file(request):
     return render(request,"IFC/upload_file.html", {"acr_data": acr_data["1"]})
 #    return render(request,"IFC/upload_file.html", {'acr_data': acr_data})
 
-def file_list(request):
+def accreditation_file_list(request):
     section = request.GET.get('sec', 'none')
     root_path = '/media/accreditation/'+str(section)+'/'
     os_path = str(settings.BASE_DIR) + root_path
@@ -223,7 +223,7 @@ def file_list(request):
 
     return render(request, 'IFC/filelist.html', {'files':files, 'section':str(section)})
 
-def file_get(request):
+def accreditation_file_get(request):
     sec = str(request.GET.get('sec', 'none'))
     fname = str(request.GET.get('f', 'none'))
     root_path = '/media/accreditation/'+str(sec)+'/'
@@ -242,7 +242,7 @@ def file_get(request):
     else:
         return redirect('/upload/list?sec=' + sec)
 
-def file_rm(request):
+def accreditation_file_rm(request):
     sec = str(request.GET.get('sec', 'none'))
     fname = str(request.GET.get('f', 'none'))
     path = str(settings.BASE_DIR) + '/media/accreditation/' + sec + '/'

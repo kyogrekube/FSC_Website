@@ -37,8 +37,8 @@ urlpatterns = [
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
     path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
-    path("upload", views.upload_file),
-    path("upload/list", views.file_list),
-    path("upload/get", views.file_get),
-    path("upload/rm", views.file_rm)
+    path("accreditation", views.accreditation_upload),
+    path("accreditation/list", views.accreditation_file_list),
+    path("accreditation/get", views.accreditation_file_get),
+    path("accreditation/rm", views.accreditation_file_rm)
 ]
