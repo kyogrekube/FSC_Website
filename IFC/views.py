@@ -191,7 +191,7 @@ def handleAcrFile(file, acr_std_id):
 
 def accreditation_upload(request):
     if request.method == 'POST':
-        acr_std_id = request.POST.get('acr_std_id')
+        acr_section = request.POST.get('acr_section')
         file = request.FILES['file']
         
         handleAcrFile(file, acr_std_id)
@@ -199,8 +199,6 @@ def accreditation_upload(request):
     acr_data_path = os.path.join(settings.BASE_DIR, 'IFC\\static\\IFC\\json\\accreditation.json')
     file = open(acr_data_path, 'r')
     acr_data = json.load(file)
-    print("ACR DATA:" + str(acr_data["1"]))
-    #acr_data = acr_data['1']
 
     return render(request,"IFC/upload_file.html", {"acr_data": acr_data["1"]})
 #    return render(request,"IFC/upload_file.html", {'acr_data': acr_data})
