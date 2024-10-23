@@ -11,16 +11,4 @@ __pycache__
 
 # VS Code (NOT EVERYONE WILL HAVE VSCODE, FIGURE OUT UNIVERSAL LAUNCHER)
 
-
-#file uploads
 media/
-
-#database
-FSC_website_database
-
-
-#file uploads
-media/
-
-#database
-FSC_website_database
