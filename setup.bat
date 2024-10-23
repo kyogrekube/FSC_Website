@@ -10,11 +10,4 @@ echo Installing Django %django__ver% in %venvpath%/
 call .venv/scripts/activate >nul
 py -m pip install --upgrade pip
 py -m pip install Django==5.1.1
-echo Setting python interpreter to %venvpath%/Scripts/activate
-del .vscode\settings.json
-(
-echo {
-echo     "python.defaultInterpreterPath": "./%venvpath%/Scripts/python.exe"
-echo }
-) >> .vscode/settings.json
 echo Done
