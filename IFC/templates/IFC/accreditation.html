@@ -31,16 +31,17 @@
             <div class="container">
                 {% for item in acr_data %}
                 <div class="row">
-                    <ul class="list-unstyled hstack">
+                    <ul class="list-unstyled">
                         <li><span class="text item">{{ item.section }}</span></li>
                     </ul>
-                    <div class="description hstack">
+                    <div class="description">
                         <span class="text">{{ item.description }}</span>
                     </div>
-                    <form action="/accreditation" method="POST" id="{{ item.section }}" class="upload-form" target="form-redirect" enctype="multipart/form-data">
-                        <label id="browse-label-{{ item.section }}" for="file-{{ item.section }}" class="browse-label bttn">Browse</label>
+
+                    <form action="/accreditation" method="POST" id="{{ item.section }}" class="upload-form hstack" enctype="multipart/form-data">
+                        <label id="browse-label-{{ item.section }}" for="file-{{ item.section }}" class="bttn textwrap">Browse</label>
                         <input type="file" id="file-{{ item.section }}" class="hidden file-select" name="file" required/>
-                        <input type="submit" id="submit-{{ item.section }}" class="submit bttn" value="Upload File">
+                        <input type="submit" id="submit-{{ item.section }}" class="submit bttn noHover" value="Upload File">
                         <input type="hidden" id="acr_section" name="acr_section" value="{{ item.section }}">
                         {% csrf_token %}
                     </form>
@@ -62,57 +63,14 @@
 
 <script>
 
-    $('.file-select').addEventListener('change', function(){
+    $('.file-select').change(function(){
         var sec_id = $(this).parent().attr('id');
-
-        var file_select_label = $('#browse-label-' + sec_id);
         var filename = $(this)[0].files[0].name;
 
-        file_select_label.text(filename);
-        submit_bttn.removeClass('noHover');
+        $('#browse-label-' + sec_id).text(filename);
+
+        $('#submit-' + sec_id).removeClass('noHover');
     })
-
-    $('.submit').click(function(){
-            $(this).addClass("noHover");
-
-            var browse_label = $('#browse-label-' + sec_id);
-            browse_label.text('Browse');
-
-            var file_select = $('#file-' + sec_id);
-            file_select.val('');
-        })
-
-    var sections = document.getElementsByClassName("upload-form");
-    //console.log(sections);
-    for (var i = 0; i < sections.length; i++)
-    {
-        var sec = sections.item(i);
-        console.log(sec);
-        var sec_id = sec.parent().attr('id');
-        console.log("sec_id: " + sec_id);
-
-        file_select_label = '#browse-label-' + sec_id;
-        file_select = '#file-' + sec_id;
-        submit_bttn = '#submit-' + sec_id;
-
-        //when a file is selected, update the browse button label and enable the upload button
-        file_select.addEventListener('change', function(){
-            var filename = $(this)[0].files[0].name;
-            file_select_label.text(filename);
-
-            submit_bttn.removeClass('noHover');
-        })
-
-        submit_bttn.click(function(){
-            $(this).addClass("noHover");
-
-            var browse_label = $('#browse-label-' + sec_id);
-            browse_label.text('Browse');
-
-            var file_select = $('#file-' + sec_id);
-            file_select.val('');
-        })
-    }
 
 </script>
 
