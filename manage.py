@@ -21,8 +21,8 @@ def main():
     if (os.environ.get('RUN_MAIN') != 'true'): # prevent second execution by django autoloader 
         if (sys.argv[1] == 'project_init'):
             from _project_setup import project_setup
-            print("Performing one-time project setup")
-            #project_setup()
+            print("Performing live init tasks")
+            project_setup()
             exit()
 
     execute_from_command_line(sys.argv)

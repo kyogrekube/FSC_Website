@@ -10,7 +10,6 @@ echo Installing Django %django__ver% in %venvpath%/
 call .venv/scripts/activate >nul
 py -m pip install --upgrade pip
 py -m pip install Django==5.1.1
-echo Performing live project init tasks
-%venvpath%/Scripts/python.exe manage.py project_init
+%venvpath%\Scripts\python.exe manage.py project_init
 echo Done
-echo 
+echo:
