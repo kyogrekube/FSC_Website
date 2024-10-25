@@ -31,7 +31,7 @@ class Chapter(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-        
+
     def get_absolute_url(self):
         chapter_slug = self.slug
         chapter_slug = chapter_slug.replace('-', '')
