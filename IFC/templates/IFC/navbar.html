@@ -37,25 +37,26 @@
             align-items: center;
             width: 100%;
         }
+
         .navbar-nav .nav-link {
-        position: relative;
-        font-size: 25px;
+            position: relative;
+            font-size: 25px;
         }
 
         .navbar-nav .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #000; /* Change this to your desired line color */
-        opacity: 0;
-        transition: opacity 0.3s ease;
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000; /* Change this to your desired line color */
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .navbar-nav .logo-button .nav-link:hover::after {
-        opacity: 0;
+            opacity: 0;
         }
 
         .navbar-nav .nav-link:hover::after {
@@ -76,92 +77,138 @@
         .bold-text {
             font-weight: bold;
         }
-        
+
         .Arial {
             font-family: Arial, sans-serif;
             font-size: small !important;
         }
+
         .dropdown-item:focus{
             background-color: rgb(214, 0, 28) !important;
             color: white !important;
         }
+
         .nav-item.dropdown:hover .dropdown-menu{
             display: block;
         }
+
         .nav-item.dropdown:hover .dropdown-toggle {
             color: black;
         }
+
         .nav-item{
             white-space: nowrap;
         }
+
+        .remove-all-padding {
+            padding: 0 !important;
+        }
+
+        .navbarContainer {
+            margin: 0 2%;
+            width: 100%;
+        }
+
+        .navBarItems {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            margin: 2% 2%;
+            justify-content: center;
+        }
+
+        .navbar-nav {
+            display: flex !important;
+            flex-direction: column !important;
+        }
     </style>
+
+    <script>
+        function navBarDirectionToggle() {
+            const navBarItems = document.getElementsByClassName("navBarItems");
+            // Loop through each item in the collection
+            for (let i = 0; i < navBarItems.length; i++) {
+                const item = navBarItems[i];
+                console.log(item);
+                // Toggle the flex direction based on the current style
+                if (window.getComputedStyle(item).flexDirection == "row") {
+                    item.style.flexDirection = "column";
+                }
+                else if (window.getComputedStyle(item).flexDirection == "column") {
+                    item.style.flexDirection = "row";
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
+    <div class="navbarContainer">
         <!-- Toggler Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" onclick="navBarDirectionToggle()">
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <!-- Home -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <!-- About Us Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        About Us
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                        <li><a class="dropdown-item" href="/chapters">Our Chapters</a></li>
-                        <li><a class="dropdown-item" href="/leadership">Leadership</a></li>
-                    </ul>
-                </li>
-                <!-- For Chapters Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="forChaptersDropdown" role="button" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        For Chapters
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="forChaptersDropdown">
-                        <li><a class="dropdown-item" href="/calendar">FSC Calendar</a></li>
-                        <li><a class="dropdown-item" href="/documents">Important Documents</a></li>
-                        <li><a class="dropdown-item" href="https://app.chapterbuilder.com/" target="_blank">Chapter Builder</a></li>
-                    </ul>
-                </li>
+            <div class="navbar-nav">
                 <!-- Logo -->
                 <li class="nav-item logo-button no-underline">
-                    <a class="nav-link no-underline" href="/">
+                    <a class="nav-link no-underline remove-all-padding" href="/">
                         <img src="{% static 'IFC/images/IFCLogo.png' %}" alt="Button Image" width="200" height="200">
                     </a>
                 </li>
-                <!-- Title IX -->
-                <li class="nav-item">
-                    <a class="nav-link" href="https://sexualviolence.rpi.edu/" target="_blank">Title IX</a>
-                </li>
-                <!-- Philanthropy & Service -->
-                <li class="nav-item">
-                    <a class="nav-link" href="Philanthropy-and-service">Philanthropy & Service</a>
-                </li>
-                <!-- Recruitment Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="recruitmentDropdown" role="button" data-bs-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Recruitment
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="recruitmentDropdown">
-                        <li><a class="dropdown-item" href="/recruitment">Why Join?</a></li>
-                        <li><a class="dropdown-item" href="/fall">Fall Recruitment</a></li>
-                        <li><a class="dropdown-item" href="/spring">Spring Recruitment</a></li>
-                    </ul>
-                </li>
-            </ul>
+                <div class="navBarItems">
+                    <!-- Home -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <!-- About Us Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="/chapters">Our Chapters</a></li>
+                            <li><a class="dropdown-item" href="/leadership">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <!-- For Chapters Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="forChaptersDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            For Chapters
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="forChaptersDropdown">
+                            <li><a class="dropdown-item" href="/calendar">FSC Calendar</a></li>
+                            <li><a class="dropdown-item" href="/documents">Important Documents</a></li>
+                            <li><a class="dropdown-item" href="https://app.chapterbuilder.com/" target="_blank">Chapter Builder</a></li>
+                        </ul>
+                    </li>
+                    <!-- Title IX -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sexualviolence.rpi.edu/" target="_blank">Title IX</a>
+                    </li>
+                    <!-- Philanthropy & Service -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="Philanthropy-and-service">Philanthropy & Service</a>
+                    </li>
+                    <!-- Recruitment Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="recruitmentDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Recruitment
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="recruitmentDropdown">
+                            <li><a class="dropdown-item" href="/recruitment">Why Join?</a></li>
+                            <li><a class="dropdown-item" href="/fall">Fall Recruitment</a></li>
+                            <li><a class="dropdown-item" href="/spring">Spring Recruitment</a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
