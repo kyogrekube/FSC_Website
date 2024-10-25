@@ -8,34 +8,74 @@
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'IFC/images/favicon.png' %}" />
     <style>
-        /* Add your custom styles here */
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333333;
+        }
+
         .containerL {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding: 0 10% 0 10%;
+            padding: 20px 10%;
         }
 
         .leader {
             width: 30%;
-            padding: 5%;
+            padding: 20px;
+            margin: 15px 0;
             text-align: center;
+            background-color: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
         }
-        .leader h2{margin: 0;}
-        .leader p{margin: 0;}
+
+        .leader:hover {
+            transform: scale(1.05);
+        }
 
         .leader img {
-            width: 50%;
-            height: 60%;
-            object-fit: contain;
+            width: 80%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+            transition: transform 0.2s ease;
+        }
+
+        .leader:hover img {
+            transform: scale(1.1);
+        }
+
+        .leader h2 {
+            margin: 10px 0 5px;
+            font-size: 1.5em;
+            color: #4d4d4d;
+        }
+
+        .leader p {
+            margin: 0;
+            font-size: 1em;
+            color: #666666;
+        }
+
+        .org {
+            font-weight: bold;
+            color: #a52a2a;
+            margin-top: 5px;
         }
 
         .position {
             color: white;
             background-color: rgb(214, 0, 28);
             padding: 5px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 8px;
         }
-
     </style>
 </head>
 
@@ -43,81 +83,78 @@
     {% include 'IFC/navbar.html' %}
 
     <div class="containerL">
-        <!-- Repeat this section for each leader -->
+        <!-- Leader 1 -->
         <div class="leader">
-          <img src="{% static 'IFC/images/leadership/joshMoskoff.png' %}" alt="Leader image">
-          <h2>Josh Moskoff</h2>
-          <p>Computer Science 2025</p>
-          <div class="org">Phi Sigma Kappa</div>
-          <div class="position">President</div>
-          
+            <img src="{% static 'IFC/images/leadership/joshMoskoff.png' %}" alt="Leader image">
+            <h2>Josh Moskoff</h2>
+            <p>Computer Science 2025</p>
+            <div class="org">Phi Sigma Kappa</div>
+            <div class="position">President</div>
         </div>
 
+        <!-- Leader 2 -->
         <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Peter Crisileo</h2>
             <p>Materials Science Engineering 2024</p>
             <div class="org">Lambda Chi Alpha</div>
             <div class="position">Vice President</div>
-            
-          </div>
+        </div>
 
-          <div class="leader">
+        <!-- Leader 3 -->
+        <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Shawn Vembenil</h2>
             <p>CS/ITWS 202</p>
             <div class="org">Sigma Chi</div>
             <div class="position">VP Recruitment</div>
-            
-          </div>
+        </div>
 
-          <div class="leader">
+        <!-- Leader 4 -->
+        <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Nick Khoo</h2>
             <p>BSAN/ITWS 2025</p>
             <div class="org">Lambda Chi Alpha</div>
             <div class="position">VP Finance</div>
-            
-          </div>
+        </div>
 
-          <div class="leader">
+        <!-- Leader 5 -->
+        <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Sam Stone</h2>
             <p>Computer Science 2024</p>
             <div class="org">Zeta Psi</div>
             <div class="position">VP Internal Communication</div>
-          </div>
+        </div>
 
-          <div class="leader">
+        <!-- Leader 6 -->
+        <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Aidan Saunders</h2>
             <p>major 202</p>
             <div class="org">Pi Lambda Phi</div>
             <div class="position">VP External Communication</div>
-          </div>
+        </div>
 
-          <div class="leader">
+        <!-- Leader 7 -->
+        <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Ethan Rokjer</h2>
             <p>major 202</p>
             <div class="org">Tau Epsilon Phi</div>
             <div class="position">VP Philanthropy & Service</div>
-            
-          </div>
+        </div>
 
-          <div class="leader">
+        <!-- Leader 8 -->
+        <div class="leader">
             <img src="{% static 'IFC/images/carousel/image1.jpeg' %}" alt="Leader image">
             <h2>Matthew So</h2>
             <p>Computer Systems Engineer</p>
             <div class="org">Delta Phi</div>
             <div class="position">IFC Senator</div>
-            
-          </div>
-            
-          
+        </div>
     </div>
-
-    <!-- Add more leader sections as needed -->
 
     <!-- Footer -->
     {% include 'IFC/footer.html' %}
