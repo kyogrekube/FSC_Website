@@ -47,6 +47,10 @@ def fall(request):
     return render(request, 'IFC/fall.html')
 
 
+def philantropy(request):
+    return render(request, 'IFC/Philanthropy-and-service.html')
+
+
 def spring(request):
     return render(request, 'IFC/spring.html')
 

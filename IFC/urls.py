@@ -30,6 +30,8 @@ urlpatterns = [
     path("fall", views.fall, name="fall"),
     path("spring", views.spring, name="spring"),
     path("event-schedule", views.eventSchedule, name="event-schedule"),
+    path("Philanthropy-and-service", views.philantropy, name="Philanthropy-and-service"),
+
 
     path("chapters/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
     path('chapters/<str:chapter_name>/', views.chapter_detail, name="chapter_detail"),

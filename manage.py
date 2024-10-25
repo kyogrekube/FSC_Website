@@ -4,7 +4,7 @@ import os
 import sys
 from django.core.management.commands.runserver import Command as runserver
 import django
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'web_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IFC.settings')
 django.setup()  # Initialize Django
 from django.contrib.auth.models import User
 
