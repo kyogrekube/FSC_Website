@@ -7,3 +7,4 @@ This performs all necessary first-time setup tasks and adds a VSCode debugger co
 
 # Starting the server
 To start the server in debug mode with VSCode, select Run -> Start Debugging
+To start the server normally, run `.venv\scripts\python.exe manage.py runserver`
