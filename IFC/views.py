@@ -67,7 +67,7 @@ def select_chapter(request):
 
 # @login_required
 def chapter_detail(request, chapter_name):
-    #chapter = get_object_or_404(Chapter, id=chapter_name)
+    # chapter = get_object_or_404(Chapter, id=chapter_name)
     return render(request, 'IFC/chapterPages/' + chapter_name + '.html')
 
 
