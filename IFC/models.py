@@ -25,7 +25,7 @@ class Chapter(models.Model):
     info = models.TextField(max_length=900)  # A 900 character info blob
     chapter_size = models.PositiveIntegerField()  # Non-negative integer
     slug = models.SlugField(unique=True, blank=True)
-    image = models.ImageField(upload_to='chapters/', blank=False, default='media/chapters/default.jpg')
+    image = models.ImageField(upload_to='chapters/', blank=False, default='chapters/default.jpg')
 
     def save(self, *args, **kwargs):
         if not self.slug:
