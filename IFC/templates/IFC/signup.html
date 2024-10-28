@@ -1,30 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'IFC/base.html' %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %}Sign up{% endblock %}
 
-    <title>Sign up</title>
-    
-    {% load static %}
-    <link rel="icon" type="image/x-icon" href="{% static 'IFC/images/favicon.png' %}" />
-    
-</head>
+{% block header %}
+{% endblock %}
 
-<body>
-    <!-- Navbar -->
-    {% include 'IFC/navbar.html' %}
-
+{% block content %}
     <form method="post">
         {% csrf_token %}
         {{ signup_form.as_p }}
         <button type="submit">Create account</button>
     </form>
-    
-    <!-- Footer -->
-    {% include 'IFC/footer.html' %}
-</body>
-
-</html>
+{% endblock %}

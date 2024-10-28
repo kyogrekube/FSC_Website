@@ -35,7 +35,7 @@ urlpatterns = [
     path("event-schedule", views.eventSchedule, name="event-schedule"),
 
     path("chapters/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
-    path('chapters/<str:chapter_name>/', views.chapter_detail, name="chapter_detail"),
+    path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
     path('chapterList', views.chapter_list, name='chapter_list'),
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
