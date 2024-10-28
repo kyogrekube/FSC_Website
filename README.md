@@ -1,5 +1,5 @@
 # WebsiteTemplate
-An RCOS project used for club websites at RPI\
+An RCOS project used for club websites at RPI
 
 # Setup
 To setup the project's development environment, run setup.bat.
