@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
-from .forms import ChapterForm
+from .forms import ChapterForm, SignUpForm
 from .models import Chapter
 
 
@@ -61,14 +62,15 @@ def chapterInfoEdit(request):
 
 
 def select_chapter(request):
-    chapter = Chapter.objects.all()
-    return render(request, 'IFC/select_chapter.html', {'chapters': chapter})
+    chapters = Chapter.objects.all()
+    return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
 
 
 # @login_required
 def chapter_detail(request, chapter_name):
-    # chapter = get_object_or_404(Chapter, id=chapter_name)
-    return render(request, 'IFC/chapterPages/' + chapter_name + '.html')
+    chapter_name = chapter_name.replace('-', ' ')
+    chapter = get_object_or_404(Chapter, name=chapter_name)
+    return render(request, 'IFC/Chapter_base.html', {'chapter': chapter})
 
 
 # @login_required
@@ -98,3 +100,31 @@ def chapter_list(request):
 #   def chapter_detail(request, slug):
 #    chapter = get_object_or_404(Chapter, slug=slug)
 #    return render(request, 'IFC/<slug>.html', {'chapter': chapter})
+
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/')
+        else:
+            return render(request, 'IFC/login.html', {'error': 'Invalid username or password'})
+    return render(request, 'IFC/login.html')
+
+def user_signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('/')
+    else:
+        form = SignUpForm()
+
+    return render(request, 'IFC/signup.html', {'signup_form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('/')

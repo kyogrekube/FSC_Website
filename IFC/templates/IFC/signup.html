@@ -6,4 +6,9 @@
 {% endblock %}
 
 {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ signup_form.as_p }}
+        <button type="submit">Create account</button>
+    </form>
 {% endblock %}
