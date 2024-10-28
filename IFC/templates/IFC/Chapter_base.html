@@ -52,6 +52,8 @@
   }
   </style>
 
+  {% load static %}
+
   <div class="container">
       <div class="left-column">
         <div class="content">
@@ -70,17 +72,18 @@
           <h2>About</h2>
           <p>{{chapter.info}}</p>
 
-
           {% block links %} {% endblock %}
         </div>
       </div>
       <div class="right-column">
-        {% block image %} {% endblock %} 
+
+        <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
 
         {% block map %} {% endblock %}
 
         {% block right_column %} {% endblock %}
       </div>
+      <a href="edit"><img src="{% static 'IFC/images/pencil.png' %}" width="40" height="40"></a>
     </div>
     
 {% endblock %}

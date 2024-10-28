@@ -79,13 +79,14 @@ def edit_chapter(request, chapter_name):
     # You might need to compare request.user with the user related to the chapter
 
     if request.method == 'POST':
-        form = ChapterForm(request.POST, instance=chapter)
+        form = ChapterForm(request.POST, request.FILES, instance=chapter)
         if form.is_valid():
             form.save()
             return redirect('/')  # Redirect to a chapter detail page
     else:
         form = ChapterForm(instance=chapter)
-    return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
+        print(form)
+    return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm})
 
 #   def chapter_detail(request, slug):
 #    chapter = get_object_or_404(Chapter, slug=slug)
