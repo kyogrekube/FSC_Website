@@ -18,7 +18,6 @@ from django.contrib import admin
 admin.autodiscover()
 from django.urls import include, path
 from IFC import views
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     # hook in admin site urls
@@ -43,5 +42,6 @@ urlpatterns = [
     path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
 
     path('login', views.user_login, name="user_login"),
-    path('signup', views.user_signup, name="user_signup")
+    path('signup', views.user_signup, name="user_signup"),
+    path('logout', views.user_logout, name="user_logout")
 ]

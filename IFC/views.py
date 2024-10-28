@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from .forms import ChapterForm, SignUpForm
@@ -123,3 +123,7 @@ def user_signup(request):
         form = SignUpForm()
 
     return render(request, 'IFC/signup.html', {'signup_form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('/')
