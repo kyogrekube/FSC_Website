@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import ChapterForm
 from .models import Chapter
 
+
 # Requesting Webpages:
 def homepage(request):
     return render(request, 'IFC/homepage.html')
@@ -54,6 +55,7 @@ def spring(request):
 def eventSchedule(request):
     return render(request, 'IFC/eventSchedule.html')
 
+
 def chapterInfoEdit(request):
     return render(request, 'IFC/chapterInfoEdit.html')
 
@@ -65,7 +67,7 @@ def select_chapter(request):
 
 # @login_required
 def chapter_detail(request, chapter_name):
-    #chapter = get_object_or_404(Chapter, id=chapter_name)
+    # chapter = get_object_or_404(Chapter, id=chapter_name)
     return render(request, 'IFC/chapterPages/' + chapter_name + '.html')
 
 
@@ -92,6 +94,7 @@ def chapter_list(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/chapter_list.html', {'chapters': chapters})
 
-#def chapter_detail(request, slug):
+
+#   def chapter_detail(request, slug):
 #    chapter = get_object_or_404(Chapter, slug=slug)
 #    return render(request, 'IFC/<slug>.html', {'chapter': chapter})
