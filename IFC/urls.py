@@ -15,11 +15,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
+admin.autodiscover()
 from django.urls import include, path
 from IFC import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    # hook in admin site urls
+    path("admin/", admin.site.urls), 
+
     # IFC app URLs
     path("", views.homepage, name="home"),
     path("documents", views.documents, name="documents"),
