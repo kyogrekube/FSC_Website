@@ -1,13 +1,6 @@
-<!doctype html>
-<html lang="en">
+{% extends 'IFC/base.html' %}
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Footer</title>
-
+{% block header %}
     <style>
         body {
             margin: 0;
@@ -82,32 +75,30 @@
         }
     </style>
     
-    
-    
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!--FONT AWESOME-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+{% endblock %}
 
-<!--GOOGLE FONTS-->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
-</head>
-<body>
-<footer>
-    <div class="footer">
-        <div class="row">
-            <ul>
-                <li><a href="https://rpi.edu" target="blank">RPI</a></li>
-                <li><a href="https://sll.rpi.edu/node/15" target="blank">Fraternity & Sorority Commons</a></li>
-                <li><a href="chapters">Our Chapters</a></li>
-                <li><a href="/leadership">Contact Us</a></li>
-                <li><a href="https://www.instagram.com/rpi_fsc/?hl=en" target="blank"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://github.com/kyogrekube/FSC_Website/" target="blank"><i class="fa fa-github"></i></a></li>
-            </ul>
-        </div>
-        <div class="row">
-            Copyright © 2024 Rensselaer Polytechnic Institute | Fraternity & Sorority Commons
-        </div>
-    </div>  
-</footer>
-
+{% block content %}
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <ul>
+                    <li><a href="https://rpi.edu" target="blank">RPI</a></li>
+                    <li><a href="https://sll.rpi.edu/node/15" target="blank">Fraternity & Sorority Commons</a></li>
+                    <li><a href="chapters">Our Chapters</a></li>
+                    <li><a href="/leadership">Contact Us</a></li>
+                    <li><a href="https://www.instagram.com/rpi_fsc/?hl=en" target="blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://github.com/kyogrekube/FSC_Website/" target="blank"><i class="fa fa-github"></i></a></li>
+                </ul>
+            </div>
+            <div class="row">
+                Copyright © 2024 Rensselaer Polytechnic Institute | Fraternity & Sorority Commons
+            </div>
+        </div>  
+    </footer>
+{% endblock %}
