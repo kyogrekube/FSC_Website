@@ -57,10 +57,6 @@ def eventSchedule(request):
     return render(request, 'IFC/eventSchedule.html')
 
 
-def chapterInfoEdit(request):
-    return render(request, 'IFC/chapterInfoEdit.html')
-
-
 def select_chapter(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
@@ -83,19 +79,14 @@ def edit_chapter(request, chapter_name):
     # You might need to compare request.user with the user related to the chapter
 
     if request.method == 'POST':
-        form = ChapterForm(request.POST, instance=chapter)
+        form = ChapterForm(request.POST, request.FILES, instance=chapter)
         if form.is_valid():
             form.save()
-            return redirect('/')  # Redirect to a chapter detail page
+            return redirect("/chapters/" + chapter.slug + "/")  # Redirect to a chapter detail page
     else:
         form = ChapterForm(instance=chapter)
-    return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
 
-
-def chapter_list(request):
-    chapters = Chapter.objects.all()
-    return render(request, 'IFC/chapter_list.html', {'chapters': chapters})
-
+    return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
 
 #   def chapter_detail(request, slug):
 #    chapter = get_object_or_404(Chapter, slug=slug)

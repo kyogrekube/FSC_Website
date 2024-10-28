@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 admin.autodiscover()
 from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 from IFC import views
 
 urlpatterns = [
@@ -25,23 +27,21 @@ urlpatterns = [
 
     # IFC app URLs
     path("", views.homepage, name="home"),
-    path("documents", views.documents, name="documents"),
-    path("calendar", views.calendar, name="calendar"),
-    path("leadership", views.leadership, name="leadership"),
-    path("recruitment", views.recruitment, name="recruitment"),
-    path("fall", views.fall, name="fall"),
-    path("spring", views.spring, name="spring"),
-    path("event-schedule", views.eventSchedule, name="event-schedule"),
+    path("documents/", views.documents, name="documents"),
+    path("calendar/", views.calendar, name="calendar"),
+    path("leadership/", views.leadership, name="leadership"),
+    path("recruitment/", views.recruitment, name="recruitment"),
+    path("fall/", views.fall, name="fall"),
+    path("spring/", views.spring, name="spring"),
+    path("event-schedule/", views.eventSchedule, name="event-schedule"),
 
-    path("chapters", views.ourChapters, name="chapters"),
-    path("chapters/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
+    path("chapters/", views.ourChapters, name="chapters"),
     path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
-    path('chapterList', views.chapter_list, name='chapter_list'),
+    path("chapters/<slug:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
-    path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
 
-    path('login', views.user_login, name="user_login"),
-    path('signup', views.user_signup, name="user_signup"),
-    path('logout', views.user_logout, name="user_logout")
-]
+    path('login/', views.user_login, name="user_login"),
+    path('signup/', views.user_signup, name="user_signup"),
+    path('logout/', views.user_logout, name="user_logout"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

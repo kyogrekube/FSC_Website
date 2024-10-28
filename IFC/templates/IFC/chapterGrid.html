@@ -60,8 +60,8 @@
 {% load static %}
 <div class="container">
   {% for chapter in chapters %}
-    <a href="chapters/{{chapter.slug}}" class="button brighten">
-      <img src="{% static 'IFC/images/AcaciaLogo.png' %}" alt="Image 1">
+    <a href="{{ chapter.slug }}" class="button brighten">
+      <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
       <p>{{chapter.name}}</p>
       <p class="nickname">{{chapter.letters}}</p>
     </a>

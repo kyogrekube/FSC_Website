@@ -17,7 +17,6 @@ class table_name(models.Model):
         db_table = 'table_table'   # Explicitly set the table name
 """
 
-
 class Chapter(models.Model):
     name = models.CharField(max_length=255)
     letters = models.CharField(max_length=10)  # Assuming Greek letters are short
@@ -26,6 +25,7 @@ class Chapter(models.Model):
     info = models.TextField(max_length=900)  # A 900 character info blob
     chapter_size = models.PositiveIntegerField()  # Non-negative integer
     slug = models.SlugField(unique=True, blank=True)
+    image = models.ImageField(upload_to='chapters/', blank=False, default='chapters/default.jpg')
 
     def save(self, *args, **kwargs):
         if not self.slug:
