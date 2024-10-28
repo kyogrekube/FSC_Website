@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class ChapterForm(forms.ModelForm):
     class Meta:
         model = Chapter
-        fields = ['name', 'letters', 'rush_chair', 'president', 'info', 'chapter_size', 'image']
+        fields = ['letters', 'rush_chair', 'president', 'info', 'chapter_size', 'image']
 
 class SignUpForm(UserCreationForm):
     class Meta:

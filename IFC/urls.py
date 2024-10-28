@@ -35,7 +35,7 @@ urlpatterns = [
     path("spring", views.spring, name="spring"),
     path("event-schedule", views.eventSchedule, name="event-schedule"),
 
-    path("chapters", views.ourChapters, name="chapters"),
+    path("chapters/", views.ourChapters, name="chapters"),
     path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
     path("chapters/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
 
