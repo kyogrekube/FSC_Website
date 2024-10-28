@@ -11,6 +11,7 @@ call .venv/scripts/activate >nul
 py -m pip install --upgrade pip
 py -m pip install Django==5.1.1
 py -m pip install Pillow
+%venvpath%\Scripts\python.exe manage.py migrate
 %venvpath%\Scripts\python.exe manage.py project_init
 echo Done
 echo:
