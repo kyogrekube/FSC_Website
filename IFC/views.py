@@ -57,10 +57,6 @@ def eventSchedule(request):
     return render(request, 'IFC/eventSchedule.html')
 
 
-def chapterInfoEdit(request):
-    return render(request, 'IFC/chapterInfoEdit.html')
-
-
 def select_chapter(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
@@ -90,12 +86,6 @@ def edit_chapter(request, chapter_name):
     else:
         form = ChapterForm(instance=chapter)
     return render(request, 'IFC/chapterInfoEdit.html', {'form': ChapterForm, 'chapter': chapter})
-
-
-def chapter_list(request):
-    chapters = Chapter.objects.all()
-    return render(request, 'IFC/chapter_list.html', {'chapters': chapters})
-
 
 #   def chapter_detail(request, slug):
 #    chapter = get_object_or_404(Chapter, slug=slug)
