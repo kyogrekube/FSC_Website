@@ -2,6 +2,10 @@
 
 {% block title %}RPI FSC{% endblock %}
 
+{% block header %}
+    {% include 'IFC/dropdownBanner.html' %}
+{% endblock %}
+
 {% block content %}
 
     {% load static %}
@@ -39,8 +43,6 @@
             src: url("{% static 'IFC/Fonts/Overpass/overpass-extrabold.otf' %}") format('truetype');
         }
     </style>
-
-    {% include 'IFC/dropdownBanner.html' %}
 
     <main class="main-content">
         <div class="container">
