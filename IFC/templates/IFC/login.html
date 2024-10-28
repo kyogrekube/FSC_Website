@@ -3,19 +3,67 @@
 {% block title %}Log in{% endblock %}
 
 {% block header %}
-    
+    {% comment %} <style>
+        .center {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: solid;
+        }
+    </style> {% endcomment %}
+
+
 {% endblock %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" required>
-        <label for="password">Password:</label>
-        <input type="text" name="password" required>
-        <button type="submit">Login</button>
-    </form>
-    
+    <style>
+            
+        .login-area {
+            background-color: white;
+            padding: 20px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #d6001c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #4cae4c;
+        }
+        
+    </style>
+
+    <div class="login-area">
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <label for="password">Password:</label>
+            <input type="text" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
     {% if error %}
         <p style="color: red;">{{ error }}</p>
     {% endif %}

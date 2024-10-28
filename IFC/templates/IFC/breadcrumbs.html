@@ -21,9 +21,23 @@
     #breadcrumb .current {
         color: #ffffff;
     }
+
+    .login-links {
+        float: right; 
+    }
 </style>
 
-<div id="breadcrumb"></div>
+<div id="breadcrumb">
+    <div class="login-links">
+        {% if user.is_authenticated %}
+            <span style="padding-right: 15px;">Logged in as {{ user.username }}</span>
+            <a href="{% url 'user_logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'user_login' %}" style="padding-right: 15px;">Log in</a>
+            <a href="{% url 'user_signup' %}">Sign Up</a>
+        {% endif %}
+    </div>
+</div>
 
 <script>
     function generateBreadcrumb() {

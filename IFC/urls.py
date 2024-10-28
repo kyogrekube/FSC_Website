@@ -38,10 +38,10 @@ urlpatterns = [
     path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
     path('chapterList', views.chapter_list, name='chapter_list'),
 
-    path('selectChapter', views.select_chapter, name="select_chapter"),
-    path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
+    path('selectChapter/', views.select_chapter, name="select_chapter"),
+    path('chapterInfoEdit/', views.chapterInfoEdit, name="chapterInfoEdit"),
 
-    path('login', views.user_login, name="user_login"),
-    path('signup', views.user_signup, name="user_signup"),
-    path('logout', views.user_logout, name="user_logout")
+    path('login/', views.user_login, name="user_login"),
+    path('signup/', views.user_signup, name="user_signup"),
+    path('logout/', views.user_logout, name="user_logout")
 ]
