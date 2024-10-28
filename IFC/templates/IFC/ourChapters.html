@@ -1,8 +1,8 @@
-{%extends 'IFC/base.html'%}
+{% extends 'IFC/base.html' %}
 
-{%block title%}Our Chapters{%endblock%}
+{% block title %}Our Chapters{% endblock %}
 
-{%block content%}
+{% block content %}
     {% load static %}
     <link rel="icon" type="image/x-icon" href="{% static 'IFC/images/favicon.png' %}" />
     <style>
@@ -20,4 +20,4 @@
     <div class="chapters">
         {% include 'IFC/chapterGrid.html' %}
     </div> 
-{%endblock%}
+{% endblock %}
