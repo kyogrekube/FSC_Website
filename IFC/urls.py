@@ -40,5 +40,8 @@ urlpatterns = [
     path('chapterList', views.chapter_list, name='chapter_list'),
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
-    path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit")
+    path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit"),
+
+    path('login', views.user_login, name="user_login"),
+    path('signup', views.user_signup, name="user_signup")
 ]

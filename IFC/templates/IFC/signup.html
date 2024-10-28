@@ -17,7 +17,11 @@
     <!-- Navbar -->
     {% include 'IFC/navbar.html' %}
 
-    
+    <form method="post">
+        {% csrf_token %}
+        {{ signup_form.as_p }}
+        <button type="submit">Create account</button>
+    </form>
     
     <!-- Footer -->
     {% include 'IFC/footer.html' %}

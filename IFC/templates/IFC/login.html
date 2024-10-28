@@ -17,8 +17,18 @@
     <!-- Navbar -->
     {% include 'IFC/navbar.html' %}
 
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <label for="password">Password:</label>
+        <input type="text" name="password" required>
+        <button type="submit">Login</button>
+    </form>
     
-    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
     <!-- Footer -->
     {% include 'IFC/footer.html' %}
 </body>
