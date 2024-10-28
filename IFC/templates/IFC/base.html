@@ -5,22 +5,23 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     {% load static %}
+    
     <link rel="icon" type="image/x-icon" href="{% static 'IFC/images/favicon.png' %}" />
     
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>{% block title %}Home{% endblock %}</title>
-
+    <title>{% block title %}RPI IFC{% endblock %}</title>
 </head>
 
 <body>
     <div id="main-content">
         <!-- Navbar -->
         {% include 'IFC/navbar.html' %}
-        
+
+        <!-- Main Content -->
         {% block content %}
         {% endblock %}
 
