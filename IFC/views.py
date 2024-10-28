@@ -62,14 +62,15 @@ def chapterInfoEdit(request):
 
 
 def select_chapter(request):
-    chapter = Chapter.objects.all()
-    return render(request, 'IFC/select_chapter.html', {'chapters': chapter})
+    chapters = Chapter.objects.all()
+    return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
 
 
 # @login_required
 def chapter_detail(request, chapter_name):
-    # chapter = get_object_or_404(Chapter, id=chapter_name)
-    return render(request, 'IFC/chapterPages/' + chapter_name + '.html')
+    chapter_name = chapter_name.replace('-', ' ')
+    chapter = get_object_or_404(Chapter, name=chapter_name)
+    return render(request, 'IFC/Chapter_base.html', {'chapter': chapter})
 
 
 # @login_required

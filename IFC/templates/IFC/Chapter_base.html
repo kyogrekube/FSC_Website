@@ -1,7 +1,6 @@
-{%extends 'IFC/base.html' %}
+{% extends 'IFC/base.html' %}
 
-{%block content%}
-
+{% block content %}
   <style>
   .container {
     display: flex;
@@ -35,6 +34,9 @@
   p {
     font-size: 18px;
   }
+  h2 {
+    font-size: 25px;
+  }
   .contact_text {
     font-size: 15px;
   }
@@ -53,18 +55,32 @@
   <div class="container">
       <div class="left-column">
         <div class="content">
-          {% block left_column %} {% endblock %}
+          
+          <h1>{{chapter.name}} ({{chapter.letters}})</h1>
+
+          <h2>President</h2>
+          <p>{{chapter.president}}</p>
+          
+          <h2>Rush chair</h2>
+          <p>{{chapter.rush_chair}}</p>
+          
+          <h2>Chapter size</h2>
+          <p>{{chapter.chapter_size}}</p>
+
+          <h2>About</h2>
+          <p>{{chapter.info}}</p>
+
 
           {% block links %} {% endblock %}
-      </div>
+        </div>
       </div>
       <div class="right-column">
-          {% block image %} {% endblock %} 
+        {% block image %} {% endblock %} 
 
-          {% block map %} {% endblock %}
+        {% block map %} {% endblock %}
 
-          {% block right_column %} {% endblock %}
+        {% block right_column %} {% endblock %}
       </div>
     </div>
     
-{%endblock%}
+{% endblock %}
