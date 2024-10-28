@@ -26,7 +26,6 @@ urlpatterns = [
     # IFC app URLs
     path("", views.homepage, name="home"),
     path("documents", views.documents, name="documents"),
-    path("chapters", views.ourChapters, name="chapters"),
     path("calendar", views.calendar, name="calendar"),
     path("leadership", views.leadership, name="leadership"),
     path("recruitment", views.recruitment, name="recruitment"),
@@ -34,6 +33,7 @@ urlpatterns = [
     path("spring", views.spring, name="spring"),
     path("event-schedule", views.eventSchedule, name="event-schedule"),
 
+    path("chapters", views.ourChapters, name="chapters"),
     path("chapters/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
     path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
     path('chapterList', views.chapter_list, name='chapter_list'),
