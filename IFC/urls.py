@@ -22,20 +22,17 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     # IFC app URLs
     path("", views.homepage, name="home"),
-    path("documents", views.documents, name="documents"),
-    path("chapters", views.ourChapters, name="chapters"),
-    path("calendar", views.calendar, name="calendar"),
-    path("leadership", views.leadership, name="leadership"),
-    path("recruitment", views.recruitment, name="recruitment"),
-    path("fall", views.fall, name="fall"),
-    path("spring", views.spring, name="spring"),
-    path("event-schedule", views.eventSchedule, name="event-schedule"),
-    path("Philanthropy-and-service", views.philantropy, name="Philanthropy-and-service"),
+    path("documents/", views.documents, name="documents"),
+    path("calendar/", views.calendar, name="calendar"),
+    path("leadership/", views.leadership, name="leadership"),
+    path("recruitment/", views.recruitment, name="recruitment"),
+    path("fall/", views.fall, name="fall"),
+    path("spring/", views.spring, name="spring"),
+    path("event-schedule/", views.eventSchedule, name="event-schedule"),
 
-
-    path("chapters/<slug:chapter_name>/edit", views.edit_chapter, name="edit_chapter"),
-    path('chapters/<str:chapter_name>/', views.chapter_detail, name="chapter_detail"),
-    path('chapterList', views.chapter_list, name='chapter_list'),
+    path("chapters/", views.ourChapters, name="chapters"),
+    path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
+    path("chapters/<slug:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
     path('chapterInfoEdit', views.chapterInfoEdit, name="chapterInfoEdit")
