@@ -122,7 +122,7 @@ def user_signup(request):
     else:
         form = SignUpForm()
 
-    return render(request, 'IFC/signup.html', {'signup_form': form})
+    return render(request, 'IFC/signup.html', {'form': form})
 
 def user_logout(request):
     logout(request)
