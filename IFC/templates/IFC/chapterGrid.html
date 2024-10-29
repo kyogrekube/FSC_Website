@@ -1,5 +1,5 @@
 <style>
-  .container {
+  .ifc-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -59,11 +59,61 @@
 
 {% load static %}
 <div class="container">
-  {% for chapter in chapters %}
-    <a href="{{ chapter.slug }}" class="button brighten">
-      <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
-      <p>{{chapter.name}}</p>
-      <p class="nickname">{{chapter.letters}}</p>
-    </a>
-  {% endfor %}
+  <div class="ifc-container">
+    <h1>The Interfraternity Council (IFC) holds all RPI fraternities</h1>
+    {% for chapter in chapters %}
+      {% if chapter.council == "IFC" %}
+      <a href="{{ chapter.slug }}" class="button brighten">
+        <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
+        <p>{{chapter.name}}</p>
+        <p class="nickname">{{chapter.letters}}</p>
+      </a>
+      {% endif %}
+    {% endfor %}
+
+    <hr class="seperator">
+  </div>
+
+  <div class="ifc-container">
+    <h1>The Multicultural Sorority Fraternity Council (MSFC) holds all RPI Multicultural Sororities and fraternities</h1>
+    {% for chapter in chapters %}
+      {% if chapter.council == "MSFC" %}
+      <a href="{{ chapter.slug }}" class="button brighten">
+        <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
+        <p>{{chapter.name}}</p>
+        <p class="nickname">{{chapter.letters}}</p>
+      </a>
+      {% endif %}
+    {% endfor %}
+
+    <hr class="seperator">
+  </div>
+
+  <div class="ifc-container">
+    <h1>The Panhellenic Council (RPC) holds all RPI Sororities</h1>
+    {% for chapter in chapters %}
+      {% if chapter.council == "RPC" %}
+      <a href="{{ chapter.slug }}" class="button brighten">
+        <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
+        <p>{{chapter.name}}</p>
+        <p class="nickname">{{chapter.letters}}</p>
+      </a>
+      {% endif %}
+    {% endfor %}
+
+    <hr class="seperator">
+  </div>
+
+  <div class="ifc-container">
+    <h1>The Profesional fraternities and Sororities holds all RPI Professional Organizations</h1>
+    {% for chapter in chapters %}
+      {% if chapter.council == "PFS" %}
+      <a href="{{ chapter.slug }}" class="button brighten">
+        <img src="{{ chapter.image.url }}" alt="{{ chapter.name }}">
+        <p>{{chapter.name}}</p>
+        <p class="nickname">{{chapter.letters}}</p>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
