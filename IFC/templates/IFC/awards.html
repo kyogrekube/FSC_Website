@@ -17,7 +17,22 @@
 
     
     <style>
-        
+        .award {
+            text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+        .award h2 {
+            font-size: 80px;
+        }
+        .award h3 {
+            font-size: 50px;
+        }
+        .award ul {
+            padding-left: 0px; /* Adjust if needed */
+            margin: 0;
+            list-style-position: inside;
+        }
     </style>
 </head>
 
@@ -26,11 +41,29 @@
         <!-- Navbar -->
         {% include 'IFC/navbar.html' %}
 
+        <section class="award">
+            <h2>FSC Yearly Awards</h2>
 
+            <h3>Past Winners</h3>
+            <p>The previous winners of the yearly IFC awards</p>
+            <div class="year-group">
+                <h3>2023</h3>
+                <ul class="winners-list">
+                    <li>Best Philanthropy: Alpha Beta Chapter</li>
+                    <li>Outstanding Service: Gamma Delta Chapter</li>
+                    <li>Leadership Excellence: Sigma Theta Chapter</li>
+                </ul>
+            </div>
         
-
-
-        
+            <div class="year-group">
+                <h3>2022</h3>
+                <ul class="winners-list">
+                    <li>Best Philanthropy: Zeta Lambda Chapter</li>
+                    <li>Outstanding Service: Phi Kappa Chapter</li>
+                    <li>Leadership Excellence: Omega Mu Chapter</li>
+                </ul>
+            </div>
+        </section>
 
         <!-- Footer -->
         {% include 'IFC/footer.html' %}
