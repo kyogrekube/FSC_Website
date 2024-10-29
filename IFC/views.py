@@ -53,6 +53,10 @@ def spring(request):
     return render(request, 'IFC/spring.html')
 
 
+def awards(request):
+    return render(request, 'IFC/awards.html')
+
+
 def eventSchedule(request):
     return render(request, 'IFC/eventSchedule.html')
 
