@@ -1,24 +1,24 @@
 <style>
-    #breadcrumb {
+    #redbar {
         padding: 8px;
         min-height: 40px;
         background-color: rgb(214, 0, 28);
     }
 
-    #breadcrumb a {
+    #redbar a {
         color: #ffffff;
         text-decoration: none;
     }
 
-    #breadcrumb a:hover {
+    #redbar a:hover {
         text-decoration: underline;
     }
 
-    #breadcrumb span {
+    #redbar span {
         color: #ffffff;
     }
 
-    #breadcrumb .current {
+    #redbar .current {
         color: #ffffff;
     }
 
@@ -27,16 +27,21 @@
     }
 </style>
 
-<div id="breadcrumb">
-    <div class="login-links">
-        {% if user.is_authenticated %}
-            <span style="padding-right: 15px;">Logged in as <b>{{ user.username }}</b></span>
-            <a href="{% url 'user_logout' %}">Logout</a>
-        {% else %}
-            <a href="{% url 'user_login' %}" style="padding-right: 15px;">Log in</a>
-            <a href="{% url 'user_signup' %}">Sign Up</a>
-        {% endif %}
-    </div>
+<div id="redbar">
+    <span id="breadcrumb" style="text-align: left;"></span>
+    <span id="session-info" style="float: right;">
+        <div class="login-links">
+            {% if user.is_authenticated %}
+                <span style="padding-right: 15px;">Hi, <b>{{ user.username }}</b></span>
+                <a href="{% url 'user_logout' %}">Logout</a>
+
+                <script></script>
+            {% else %}
+                <a href="{% url 'user_login' %}" style="padding-right: 15px;">Log in</a>
+                <a href="{% url 'user_signup' %}">Sign Up</a>
+            {% endif %}
+        </div>
+    </span>
 </div>
 
 <script>
@@ -53,6 +58,7 @@
         // Loop through each part to build the breadcrumb trail
         urlParts.shift();  // We've already processed the domain
         let path = '';
+        console.log("HELOOOOOOOOOOOOOOO")
         urlParts.forEach(function(part, i) {
             path += '/' + part;
             if (i < urlParts.length - 1) {
@@ -67,4 +73,6 @@
         // Insert the breadcrumb HTML into the page
         document.getElementById('breadcrumb').innerHTML = breadcrumbHTML;
     };
+
+    generateBreadcrumb();
 </script>
