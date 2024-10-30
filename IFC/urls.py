@@ -23,17 +23,17 @@ from IFC import views
 
 urlpatterns = [
     # hook in admin site urls
-    path("admin/", admin.site.urls), 
+    path("admin/", admin.site.urls),
+
 
     # IFC app URLs
-    path("", views.homepage, name="home"),
-    path("documents/", views.documents, name="documents"),
-    path("calendar/", views.calendar, name="calendar"),
-    path("leadership/", views.leadership, name="leadership"),
-    path("recruitment/", views.recruitment, name="recruitment"),
-    path("fall/", views.fall, name="fall"),
-    path("spring/", views.spring, name="spring"),
-    path("event-schedule/", views.eventSchedule, name="event-schedule"),
+    path("", views.simpleView("IFC/homepage.html"), name="home"),
+    path("documents/", views.simpleView("IFC/documents.html"), name="documents"),
+    path("calendar/", views.simpleView("IFC/calendar.html"), name="calendar"),
+    path("leadership/", views.simpleView("IFC/leadership.html"), name="leadership"),
+    path("recruitment/", views.simpleView("IFC/recruitment.html"), name="recruitment"),
+    path("fall/", views.simpleView("IFC/fall.html"), name="fall"),
+    path("spring/", views.simpleView("IFC/spring.html"), name="spring"),
 
     path("chapters/", views.ourChapters, name="chapters"),
     path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
