@@ -12,20 +12,24 @@ from .models import Chapter
 def simpleView(template):
     return TemplateView.as_view(template_name=template)
 
+
 # Requesting Webpages:
 def ourChapters(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/ourChapters.html', {'chapters': chapters})
 
+
 def select_chapter(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
+
 
 # @login_required
 def chapter_detail(request, chapter_name):
     chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
     return render(request, 'IFC/Chapter_base.html', {'chapter': chapter})
+
 
 # @login_required
 def edit_chapter(request, chapter_name):
@@ -46,6 +50,7 @@ def edit_chapter(request, chapter_name):
 
     return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
 
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -58,6 +63,7 @@ def user_login(request):
             return render(request, 'IFC/login.html', {'error': 'Invalid username or password'})
     return render(request, 'IFC/login.html')
 
+
 def user_signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -69,6 +75,7 @@ def user_signup(request):
         form = SignUpForm()
 
     return render(request, 'IFC/signup.html', {'signup_form': form})
+
 
 def user_logout(request):
     logout(request)

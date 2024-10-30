@@ -7,6 +7,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'IFC.settings')
 
 runserver.default_port = "80"  # Running on port 80
 
+
 def main():
     """Run administrative tasks."""
     try:
@@ -17,8 +18,8 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    
-    if (os.environ.get('RUN_MAIN') != 'true'): # prevent second execution by django autoloader 
+
+    if (os.environ.get('RUN_MAIN') != 'true'):  # prevent second execution by django autoloader
         if (sys.argv[1] == 'project_init'):
             from _project_setup import project_setup
             print("Performing live init tasks")

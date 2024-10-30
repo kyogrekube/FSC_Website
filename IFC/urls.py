@@ -25,6 +25,7 @@ urlpatterns = [
     # hook in admin site urls
     path("admin/", admin.site.urls), 
 
+
     # IFC app URLs
     path("", views.simpleView("IFC/homepage.html"), name="home"),
     path("documents/", views.simpleView("IFC/documents.html"), name="documents"),

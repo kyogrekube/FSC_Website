@@ -17,6 +17,7 @@ class table_name(models.Model):
         db_table = 'table_table'   # Explicitly set the table name
 """
 
+
 class Chapter(models.Model):
     name = models.CharField(max_length=255)
     letters = models.CharField(max_length=10)  # Assuming Greek letters are short
