@@ -30,7 +30,7 @@
 <div id="breadcrumb">
     <div class="login-links">
         {% if user.is_authenticated %}
-            <span style="padding-right: 15px;">Logged in as {{ user.username }}</span>
+            <span style="padding-right: 15px;">Logged in as <b>{{ user.username }}</b></span>
             <a href="{% url 'user_logout' %}">Logout</a>
         {% else %}
             <a href="{% url 'user_login' %}" style="padding-right: 15px;">Log in</a>
