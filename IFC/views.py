@@ -8,70 +8,20 @@ from .models import Chapter
 
 
 # Requesting Webpages:
-def homepage(request):
-    return render(request, 'IFC/homepage.html')
-
-
-def leadership(request):
-    return render(request, 'IFC/leadership.html')
-
-
-def contacts(request):
-    return render(request, 'IFC/contacts.html')
-
 
 def ourChapters(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/ourChapters.html', {'chapters': chapters})
 
-
-def schedule(request):
-    return render(request, 'IFC/schedule.html')
-
-
-def documents(request):
-    return render(request, 'IFC/importantDocuments.html')
-
-
-def forChapters(request):
-    return render(request, 'IFC/forChapters.html')
-
-
-def calendar(request):
-    return render(request, 'IFC/calendar.html')
-
-
-def recruitment(request):
-    return render(request, 'IFC/recruitment.html')
-
-
-def fall(request):
-    return render(request, 'IFC/fall.html')
-
-
-def spring(request):
-    return render(request, 'IFC/spring.html')
-
-
-def awards(request):
-    return render(request, 'IFC/awards.html')
-
-
-def eventSchedule(request):
-    return render(request, 'IFC/eventSchedule.html')
-
-
 def select_chapter(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
-
 
 # @login_required
 def chapter_detail(request, chapter_name):
     chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
     return render(request, 'IFC/Chapter_base.html', {'chapter': chapter})
-
 
 # @login_required
 def edit_chapter(request, chapter_name):
