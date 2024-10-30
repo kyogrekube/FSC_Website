@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 admin.autodiscover()
 from django.urls import include, path
+from django.views.generic import TemplateView
 from IFC import views
 
 urlpatterns = [
@@ -43,5 +44,6 @@ urlpatterns = [
 
     path('login/', views.user_login, name="user_login"),
     path('signup/', views.user_signup, name="user_signup"),
-    path('logout/', views.user_logout, name="user_logout")
+    path('logout/', views.user_logout, name="user_logout"),
+    path('profile/', views.profileView.as_view(), name="view_profile")
 ]
