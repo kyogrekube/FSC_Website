@@ -3,12 +3,16 @@ from django.http import HttpResponse
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView
 from .forms import ChapterForm, SignUpForm
 from .models import Chapter
 
 
-# Requesting Webpages:
+# class-based view abstreaction for views that simply render a template
+def simpleView(template):
+    return TemplateView.as_view(template_name=template)
 
+# Requesting Webpages:
 def ourChapters(request):
     chapters = Chapter.objects.all()
     return render(request, 'IFC/ourChapters.html', {'chapters': chapters})
@@ -41,10 +45,6 @@ def edit_chapter(request, chapter_name):
         form = ChapterForm(instance=chapter)
 
     return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
-
-#   def chapter_detail(request, slug):
-#    chapter = get_object_or_404(Chapter, slug=slug)
-#    return render(request, 'IFC/<slug>.html', {'chapter': chapter})
 
 def user_login(request):
     if request.method == 'POST':

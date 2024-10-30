@@ -19,7 +19,6 @@ admin.autodiscover()
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
 from IFC import views
 
 urlpatterns = [
@@ -27,13 +26,13 @@ urlpatterns = [
     path("admin/", admin.site.urls), 
 
     # IFC app URLs
-    path("", TemplateView.as_view(template_name="IFC/homepage.html"), name="home"),
-    path("documents/", TemplateView.as_view(template_name="IFC/documents.html"), name="documents"),
-    path("calendar/", TemplateView.as_view(template_name="IFC/calendar.html"), name="calendar"),
-    path("leadership/", TemplateView.as_view(template_name="IFC/leadership.html"), name="leadership"),
-    path("recruitment/", TemplateView.as_view(template_name="IFC/recruitment.html"), name="recruitment"),
-    path("fall/", TemplateView.as_view(template_name="IFC/fall.html"), name="fall"),
-    path("spring/", TemplateView.as_view(template_name="IFC/spring.html"), name="spring"),
+    path("", views.simpleView("IFC/homepage.html"), name="home"),
+    path("documents/", views.simpleView("IFC/documents.html"), name="documents"),
+    path("calendar/", views.simpleView("IFC/calendar.html"), name="calendar"),
+    path("leadership/", views.simpleView("IFC/leadership.html"), name="leadership"),
+    path("recruitment/", views.simpleView("IFC/recruitment.html"), name="recruitment"),
+    path("fall/", views.simpleView("IFC/fall.html"), name="fall"),
+    path("spring/", views.simpleView("IFC/spring.html"), name="spring"),
 
     path("chapters/", views.ourChapters, name="chapters"),
     path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
