@@ -36,12 +36,10 @@ urlpatterns = [
     path("event-schedule/", views.eventSchedule, name="event-schedule"),
 
     path("chapters/", views.ourChapters, name="chapters"),
-    path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
+    path("chapters/<slug:chapter_name>/", views.chapter_detail, name="chapter_detail"),
     path("chapters/<slug:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
 
-    path('selectChapter', views.select_chapter, name="select_chapter"),
-
-    path('login/', views.user_login, name="user_login"),
-    path('signup/', views.user_signup, name="user_signup"),
-    path('logout/', views.user_logout, name="user_logout"),
+    path("login/", views.user_login, name="user_login"),
+    path("signup/", views.user_signup, name="user_signup"),
+    path("logout/", views.user_logout, name="user_logout"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

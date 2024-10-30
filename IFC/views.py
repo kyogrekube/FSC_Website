@@ -33,10 +33,6 @@ def documents(request):
     return render(request, 'IFC/importantDocuments.html')
 
 
-def forChapters(request):
-    return render(request, 'IFC/forChapters.html')
-
-
 def calendar(request):
     return render(request, 'IFC/calendar.html')
 
@@ -55,11 +51,6 @@ def spring(request):
 
 def eventSchedule(request):
     return render(request, 'IFC/eventSchedule.html')
-
-
-def select_chapter(request):
-    chapters = Chapter.objects.all()
-    return render(request, 'IFC/select_chapter.html', {'chapters': chapters})
 
 
 # @login_required
