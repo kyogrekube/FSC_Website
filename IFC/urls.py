@@ -23,7 +23,7 @@ from IFC import views
 
 urlpatterns = [
     # hook in admin site urls
-    path("admin/", admin.site.urls), 
+    path("admin/", admin.site.urls),
 
 
     # IFC app URLs
