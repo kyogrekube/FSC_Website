@@ -26,7 +26,7 @@ def select_chapter(request):
 
 # @login_required
 def chapter_detail(request, chapter_name):
-    #chapter_name = chapter_name.replace('-', ' ')
+    chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
     return render(request, 'IFC/Chapter_base.html', {'chapter': chapter})
 
@@ -44,7 +44,7 @@ def edit_chapter(request, chapter_name):
         form = ChapterForm(request.POST, request.FILES, instance=chapter)
         if form.is_valid():
             form.save()
-            return redirect("/chapters/" + chapter.slug + "/")  # Redirect to a chapter detail page
+            return redirect("/chapters/" + chapter.name + "/")  # Redirect to a chapter detail page
     else:
         form = ChapterForm(instance=chapter)
 

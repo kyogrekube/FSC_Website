@@ -36,8 +36,8 @@ urlpatterns = [
     path("spring/", views.simpleView("IFC/spring.html"), name="spring"),
 
     path("chapters/", views.ourChapters, name="chapters"),
-    path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
-    path("chapters/<slug:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
+    path('chapters/<str:chapter_name>/', views.chapter_detail, name="chapter_detail"),
+    path("chapters/<str:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
 
