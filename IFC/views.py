@@ -26,7 +26,7 @@ def select_chapter(request):
 
 # @login_required
 def chapter_detail(request, chapter_name):
-    chapter_name = chapter_name.replace('-', ' ')
+    #chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
     return render(request, 'IFC/Chapter_base.html', {'chapter': chapter})
 
