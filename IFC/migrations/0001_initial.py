@@ -3,7 +3,6 @@
 from django.db import migrations, models
 
 def create_chapter_models(apps, schema_editor):
-    
     # Get the model from the historical version
     Chapters = apps.get_model('IFC_Website', 'Chapter')
     # Create predefined instances
