@@ -3,6 +3,7 @@
 from django.db import migrations, models
 import json
 
+
 def create_chapter_models(apps, schema_editor):
 
     print("Creating chapter models...")
@@ -27,10 +28,6 @@ def create_chapter_models(apps, schema_editor):
         )
 
     file.close()
-
-def create_superuser(apps, schema_editor):
-    Users = apps.get_model('IFC', 'User')
-    
 
 
 class Migration(migrations.Migration):
