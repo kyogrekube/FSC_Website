@@ -44,7 +44,7 @@ def edit_chapter(request, chapter_name):
         form = ChapterForm(request.POST, request.FILES, instance=chapter)
         if form.is_valid():
             form.save()
-            return redirect("/chapters/" + chapter.slug + "/")  # Redirect to a chapter detail page
+            return redirect("/chapters/" + chapter.name + "/")  # Redirect to a chapter detail page
     else:
         form = ChapterForm(instance=chapter)
 
