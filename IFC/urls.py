@@ -42,8 +42,8 @@ urlpatterns = [
 
     path('selectChapter', views.select_chapter, name="select_chapter"),
 
-    path('login//', views.user_login, name="user_login"),
-    path('signup//', views.user_signup, name="user_signup"),
-    path('logout//', views.user_logout, name="user_logout"),
+    path('login/', views.user_login, name="user_login"),
+    path('signup/', views.user_signup, name="user_signup"),
+    path('logout/', views.user_logout, name="user_logout"),
     path('profile/', views.profileView.as_view(), name="view_profile"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
