@@ -17,33 +17,33 @@ Including another URLconf
 from django.contrib import admin
 admin.autodiscover()
 from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from IFC import views
 
 urlpatterns = [
     # hook in admin site urls
-    path("admin/", admin.site.urls), 
+    path("admin/", admin.site.urls),
+
 
     # IFC app URLs
-    path("", views.homepage, name="home"),
-    path("documents/", views.documents, name="documents"),
+    path("", views.simpleView("IFC/homepage.html"), name="home"),
+    path("documents/", views.simpleView("IFC/documents.html"), name="documents"),
+    path("calendar/", views.simpleView("IFC/calendar.html"), name="calendar"),
+    path("leadership/", views.simpleView("IFC/leadership.html"), name="leadership"),
+    path("recruitment/", views.simpleView("IFC/recruitment.html"), name="recruitment"),
+    path("fall/", views.simpleView("IFC/fall.html"), name="fall"),
+    path("spring/", views.simpleView("IFC/spring.html"), name="spring"),
+
     path("chapters/", views.ourChapters, name="chapters"),
-    path("calendar/", views.calendar, name="calendar"),
-    path("leadership/", views.leadership, name="leadership"),
-    path("recruitment/", views.recruitment, name="recruitment"),
-    path("fall/", views.fall, name="fall"),
-    path("spring/", views.spring, name="spring"),
-    path("event-schedule/", views.eventSchedule, name="event-schedule"),
+    path('chapters/<str:chapter_name>/', views.chapter_detail, name="chapter_detail"),
+    path("chapters/<str:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
 
-    path("chapters/<slug:chapter_name>/edit/", views.edit_chapter, name="edit_chapter"),
-    path('chapters/<slug:chapter_name>/', views.chapter_detail, name="chapter_detail"),
-    path('chapterList/', views.chapter_list, name='chapter_list'),
+    path('selectChapter', views.select_chapter, name="select_chapter"),
 
-    path('selectChapter/', views.select_chapter, name="select_chapter"),
-    path('chapterInfoEdit/', views.chapterInfoEdit, name="chapterInfoEdit"),
-
-    path('login/', views.user_login, name="user_login"),
-    path('signup/', views.user_signup, name="user_signup"),
-    path('logout/', views.user_logout, name="user_logout"),
-    path('profile/', views.profileView.as_view(), name="view_profile")
-]
+    path('login//', views.user_login, name="user_login"),
+    path('signup//', views.user_signup, name="user_signup"),
+    path('logout//', views.user_logout, name="user_logout"),
+    path('profile/', views.profileView.as_view(), name="view_profile"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
