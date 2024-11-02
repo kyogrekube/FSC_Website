@@ -17,32 +17,32 @@ CHAPTER_NAMES = [
 ]
 
 
-def create_users():
-    """Create admin and chapter users if they don't exist."""
-    # Create admin user
-    if not User.objects.filter(username='fscAdminUser').exists():
-        User.objects.create_superuser(
-            username='fscAdminUser',
-            email='fscaccountemail@gmail.com',
-            password='RCOSfall2024'
-        )
-        print("Admin user created successfully.")
-    else:
-        print("Admin user already exists.")
+# def create_users():
+#     """Create admin and chapter users if they don't exist."""
+#     # Create admin user
+#     if not User.objects.filter(username='fscAdminUser').exists():
+#         User.objects.create_superuser(
+#             username='fscAdminUser',
+#             email='fscaccountemail@gmail.com',
+#             password='RCOSfall2024'
+#         )
+#         print("Admin user created successfully.")
+#     else:
+#         print("Admin user already exists.")
 
-    # Create chapter users
-    for chapter in CHAPTER_NAMES:
-        if not User.objects.filter(username=chapter.lower()).exists():
-            User.objects.create_user(
-                username=chapter.lower(),  # Username in lowercase for consistency
-                email=f"{chapter.lower()}@example.com",
-                password=chapter.lower()  # Password is the same as username
-            )
-            print(f"Standard user '{chapter.lower()}' created successfully.")
-        else:
-            print(f"Standard user '{chapter.lower()}' already exists.")
+#     # Create chapter users
+#     for chapter in CHAPTER_NAMES:
+#         if not User.objects.filter(username=chapter.lower()).exists():
+#             User.objects.create_user(
+#                 username=chapter.lower(),  # Username in lowercase for consistency
+#                 email=f"{chapter.lower()}@example.com",
+#                 password=chapter.lower()  # Password is the same as username
+#             )
+#             print(f"Standard user '{chapter.lower()}' created successfully.")
+#         else:
+#             print(f"Standard user '{chapter.lower()}' already exists.")
 
 
 def project_setup():
-    print("calling create_users()")
-    create_users()
+    #create_users()
+    return
