@@ -44,5 +44,4 @@ CHAPTER_NAMES = [
 
 
 def project_setup():
-    #create_users()
     return
