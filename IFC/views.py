@@ -1,6 +1,11 @@
+from typing import Any
+from django.db.models.base import Model as Model
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from django.views import generic
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
@@ -33,23 +38,28 @@ def chapter_detail(request, chapter_name):
 
 # @login_required
 def edit_chapter(request, chapter_name):
+
     # Get the chapter by ID (or use some other logic to assign chapters to users)
     chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
 
-    # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
-    # You might need to compare request.user with the user related to the chapter
+    if request.user.is_authenticated and request.user.affiliation == chapter_name:
 
-    if request.method == 'POST':
-        form = ChapterForm(request.POST, request.FILES, instance=chapter)
-        if form.is_valid():
-            form.save()
-            return redirect("/chapters/" + chapter.name + "/")  # Redirect to a chapter detail page
+
+        # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
+        # You might need to compare request.user with the user related to the chapter
+
+        if request.method == 'POST':
+            form = ChapterForm(request.POST, request.FILES, instance=chapter)
+            if form.is_valid():
+                form.save()
+                return redirect("/chapters/" + chapter.name + "/")
+        else:
+            form = ChapterForm(instance=chapter)
+
+        return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
     else:
-        form = ChapterForm(instance=chapter)
-
-    return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
-
+        return redirect("/chapters/" + chapter.name + "/")
 
 def user_login(request):
     if request.method == 'POST':
@@ -74,9 +84,25 @@ def user_signup(request):
     else:
         form = SignUpForm()
 
-    return render(request, 'IFC/signup.html', {'signup_form': form})
+    return render(request, 'IFC/signup.html', {'form': form})
 
 
 def user_logout(request):
     logout(request)
     return redirect('/')
+
+class profileView(generic.UpdateView):
+    form_class = UserChangeForm
+    template_name = 'IFC/profile.html'
+    success_url = '/'
+
+    def get_object(self):
+        return self.request.user
+
+# def view_profile(request):
+#     user = request.user
+#     if user is not None:
+#         print("Logged in:" + str(user))
+#         return render(request, 'IFC/profile.html', {'user': request.user})
+#     else:
+#         return redirect("login")

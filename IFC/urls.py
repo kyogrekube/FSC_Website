@@ -19,6 +19,7 @@ admin.autodiscover()
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 from IFC import views
 
 urlpatterns = [
@@ -44,4 +45,5 @@ urlpatterns = [
     path('login/', views.user_login, name="user_login"),
     path('signup/', views.user_signup, name="user_signup"),
     path('logout/', views.user_logout, name="user_logout"),
+    path('profile/', views.profileView.as_view(), name="view_profile"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

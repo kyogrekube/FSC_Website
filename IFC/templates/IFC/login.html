@@ -1,22 +1,28 @@
-{% extends 'IFC/base.html' %}
+{% extends 'IFC/textForm1.html' %}
 
 {% block title %}Log in{% endblock %}
 
-{% block header %}
-    
+{% block form-title %}Log in{% endblock %}
+
+{% block error-handle %} 
+    {% if error %}
+        <div class="help-text alert alert-danger">
+            <b>Error: </b> Invalid username or password
+        </div>
+    {% endif %}
 {% endblock %}
 
-{% block content %}
+{% block form-content %}
     <form method="post">
         {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" name="username" required>
-        <label for="password">Password:</label>
-        <input type="text" name="password" required>
-        <button type="submit">Login</button>
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit"><span style="font-weight: bold;">Log in</span></button>
+        </div>
     </form>
-    
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
 {% endblock %}
