@@ -38,23 +38,28 @@ def chapter_detail(request, chapter_name):
 
 # @login_required
 def edit_chapter(request, chapter_name):
+
     # Get the chapter by ID (or use some other logic to assign chapters to users)
     chapter_name = chapter_name.replace('-', ' ')
     chapter = get_object_or_404(Chapter, name=chapter_name)
 
-    # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
-    # You might need to compare request.user with the user related to the chapter
+    if request.user.is_authenticated and request.user.affiliation == chapter_name:
 
-    if request.method == 'POST':
-        form = ChapterForm(request.POST, request.FILES, instance=chapter)
-        if form.is_valid():
-            form.save()
-            return redirect("/chapters/" + chapter.name + "/")  # Redirect to a chapter detail page
+
+        # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
+        # You might need to compare request.user with the user related to the chapter
+
+        if request.method == 'POST':
+            form = ChapterForm(request.POST, request.FILES, instance=chapter)
+            if form.is_valid():
+                form.save()
+                return redirect("/chapters/" + chapter.name + "/")
+        else:
+            form = ChapterForm(instance=chapter)
+
+        return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
     else:
-        form = ChapterForm(instance=chapter)
-
-    return render(request, 'IFC/chapterInfoEdit.html', {'form': form, 'chapter': chapter})
-
+        return redirect("/chapters/" + chapter.name + "/")
 
 def user_login(request):
     if request.method == 'POST':

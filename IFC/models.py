@@ -2,7 +2,7 @@
 
 from django.db import models
 from django.utils.text import slugify
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 """
 EXAMPLE OF HOW TO MAKE A TABLE:
@@ -37,5 +37,5 @@ class Chapter(models.Model):
     def __str__(self):
         return self.name
 
-class FSCUser(User):
+class FSCUser(AbstractUser):
     affiliation = models.CharField(max_length=255)
