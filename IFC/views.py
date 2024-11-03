@@ -45,7 +45,6 @@ def edit_chapter(request, chapter_name):
 
     if request.user.is_authenticated and request.user.affiliation == chapter_name:
 
-
         # Ensure the user is authorized to edit this chapter (this depends on your user model/permissions setup)
         # You might need to compare request.user with the user related to the chapter
 
@@ -91,6 +90,7 @@ def user_logout(request):
     logout(request)
     return redirect('/')
 
+
 class profileView(generic.UpdateView):
     form_class = UserChangeForm
     template_name = 'IFC/profile.html'
@@ -98,11 +98,3 @@ class profileView(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
-
-# def view_profile(request):
-#     user = request.user
-#     if user is not None:
-#         print("Logged in:" + str(user))
-#         return render(request, 'IFC/profile.html', {'user': request.user})
-#     else:
-#         return redirect("login")
