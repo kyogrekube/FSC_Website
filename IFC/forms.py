@@ -1,5 +1,5 @@
 from django import forms
-from .models import Chapter
+from .models import Chapter, FSCUser
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -12,8 +12,8 @@ class ChapterForm(forms.ModelForm):
 
 class SignUpForm(UserCreationForm):
     class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        model = FSCUser
+        fields = ['username', 'email', 'affiliation', 'password1', 'password2']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
