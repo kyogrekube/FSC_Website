@@ -85,7 +85,9 @@
 
         {% block right_column %} {% endblock %}
       </div>
-      <a href="edit"><img src="{% static 'IFC/images/pencil.png' %}" width="40" height="40"></a>
+      {% if user.affiliation == chapter.name %}
+        <a href="edit"><img src="{% static 'IFC/images/pencil.png' %}" width="40" height="40"></a>
+      {% endif %}
     </div>
     
 {% endblock %}
