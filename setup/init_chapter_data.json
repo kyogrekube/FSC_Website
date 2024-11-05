@@ -1,7 +1,7 @@
 [
     {
         "name": "Acacia",
-        "letters": "AAA",
+        "letters": "Acacia",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -10,7 +10,7 @@
     },
     {
         "name": "Alpha Chi Rho",
-        "letters": "AAA",
+        "letters": "ΑΧΡ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -19,7 +19,7 @@
     },
     {
         "name": "Alpha Epsilon Pi",
-        "letters": "AAA",
+        "letters": "ΑΕΠ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -28,7 +28,7 @@
     },
     {
         "name": "Alpha Sigma Phi",
-        "letters": "AAA",
+        "letters": "ΑΣΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -37,7 +37,7 @@
     },
     {
         "name": "Chi Phi",
-        "letters": "AAA",
+        "letters": "ΧΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -46,7 +46,7 @@
     },
     {
         "name": "Delta Kappa Epsilon",
-        "letters": "AAA",
+        "letters": "ΔΚΕ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -55,7 +55,7 @@
     },
     {
         "name": "Delta Phi",
-        "letters": "AAA",
+        "letters": "ΔΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -64,7 +64,7 @@
     },
     {
         "name": "Lambda Chi Alpha",
-        "letters": "AAA",
+        "letters": "ΛΧΑ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -73,7 +73,7 @@
     },
     {
         "name": "Phi Gamma Delta",
-        "letters": "ΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛΛ",
+        "letters": "FIJI",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -82,7 +82,7 @@
     },
     {
         "name": "Phi Kappa Theta",
-        "letters": "AAA",
+        "letters": "ΦΚΘ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -91,7 +91,7 @@
     },
     {
         "name": "Phi Mu Delta",
-        "letters": "AAA",
+        "letters": "ΦΜΔ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -100,7 +100,7 @@
     },
     {
         "name": "Phi Sigma Kappa",
-        "letters": "AAA",
+        "letters": "ΦΣΚ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -109,7 +109,7 @@
     },
     {
         "name": "Pi Kappa Alpha",
-        "letters": "AAA",
+        "letters": "ΠΚΑ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -118,7 +118,7 @@
     },
     {
         "name": "Pi Lambda Phi",
-        "letters": "AAA",
+        "letters": "ΠΛΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -127,7 +127,7 @@
     },
     {
         "name": "Psi Upsilon",
-        "letters": "AAA",
+        "letters": "ΨΥ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -136,7 +136,7 @@
     },
     {
         "name": "Sigma Alpha Epsilon",
-        "letters": "AAA",
+        "letters": "ΣΑΕ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -145,7 +145,7 @@
     },
     {
         "name": "Sigma Chi",
-        "letters": "AAA",
+        "letters": "ΣΧ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -154,7 +154,7 @@
     },
     {
         "name": "Sigma Phi Epsilon",
-        "letters": "AAA",
+        "letters": "ΣΦΕ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -163,7 +163,7 @@
     },
     {
         "name": "Tau Epsilon Phi",
-        "letters": "AAA",
+        "letters": "ΤΕΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -172,7 +172,7 @@
     },
     {
         "name": "Tau Kappa Epsilon",
-        "letters": "AAA",
+        "letters": "ΤΚΕ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -181,7 +181,7 @@
     },
     {
         "name": "Theta Xi",
-        "letters": "AAA",
+        "letters": "ΘΞ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -190,7 +190,7 @@
     },
     {
         "name": "Zeta Psi",
-        "letters": "AAA",
+        "letters": "ΖΨ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -199,7 +199,7 @@
     },
     {
         "name": "Delta Tau Delta",
-        "letters": "AAA",
+        "letters": "ΔΤΔ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -208,7 +208,7 @@
     },
     {
         "name": "Alpha Phi Alpha",
-        "letters": "AAA",
+        "letters": "ΑΦΑ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -217,7 +217,7 @@
     },
     {
         "name": "Phi Iota Alpha",
-        "letters": "AAA",
+        "letters": "ΦΙΑ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -226,7 +226,7 @@
     },
     {
         "name": "Pi Delta Psi",
-        "letters": "AAA",
+        "letters": "ΠΔΨ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -235,7 +235,7 @@
     },
     {
         "name": "Lambda Upsilon Lambda",
-        "letters": "AAA",
+        "letters": "ΛΥΛ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -244,7 +244,7 @@
     },
     {
         "name": "Omega Phi Beta",
-        "letters": "AAA",
+        "letters": "ΩΦΒ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -253,7 +253,7 @@
     },
     {
         "name": "Sigma Iota Alpha",
-        "letters": "AAA",
+        "letters": "ΣΙΑ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -262,7 +262,7 @@
     },
     {
         "name": "Alpha Gamma Delta",
-        "letters": "AAA",
+        "letters": "ΑΓΔ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -271,7 +271,7 @@
     },
     {
         "name": "Alpha Phi",
-        "letters": "AAA",
+        "letters": "ΑΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -280,7 +280,7 @@
     },
     {
         "name": "Pi Beta Phi",
-        "letters": "AAA",
+        "letters": "ΠΒΦ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -289,7 +289,7 @@
     },
     {
         "name": "Alpha Omega Epsilon",
-        "letters": "AAA",
+        "letters": "ΑΩΕ",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -298,7 +298,7 @@
     },
     {
         "name": "Rensselaer Society of Engineering Innovation",
-        "letters": "AAA",
+        "letters": "RSEi",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
@@ -307,7 +307,7 @@
     },
     {
         "name": "Order of Omega",
-        "letters": "AAA",
+        "letters": "",
         "rush_chair": "temp",
         "president": "temp",
         "info": "temp",
