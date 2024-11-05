@@ -60,6 +60,7 @@ def edit_chapter(request, chapter_name):
     else:
         return redirect("/chapters/" + chapter.name + "/")
 
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
