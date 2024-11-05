@@ -16,7 +16,7 @@ def create_chapter_models(apps, schema_editor):
     Chapters = apps.get_model('IFC', 'Chapter')
     # Create predefined instances
 
-    file = open('setup/init_chapter_data.json', 'r')
+    file = open('setup/init_chapter_data.json', 'r', encoding='utf-8')
     data = json.load(file)
 
     for i in range(len(data)):
